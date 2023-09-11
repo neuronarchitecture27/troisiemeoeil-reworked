@@ -1,0 +1,8 @@
+@import '/breakpoints';
+.main {
+    @include sm {
+        width: 100%;
+    height: auto;   
+    }
+  
+}

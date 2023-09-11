@@ -1,0 +1,64 @@
+@font-face {
+    font-family: NewYork;
+    src: url("/fonts/NewYork.otf");
+  
+    }
+.main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.body{
+    width: 51vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 6vw;
+    justify-content:space-evenly;
+    text-transform: uppercase;
+    color: white;
+    font-family: NewYork;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.introLine{
+    display: flex;
+    font-size: 6vw;
+    justify-content:space-evenly;
+    text-transform: uppercase;
+    color: white;
+    font-family: NewYork;
+
+}
+
+
+.introLine:nth-of-type(5), .introLine:nth-of-type(6){
+    display: inline-flex;
+}
+.introLine:nth-of-type(6){
+    right: -40px;
+    position: relative;
+}
+
+.introLine p{
+    margin: 0px;
+}
+
+.background{
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

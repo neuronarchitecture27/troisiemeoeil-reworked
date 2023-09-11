@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+    font-family: NewYork;
+    src: url("/fonts/NewYork.otf");
+  
+    }
+
+.DescriptionHead {
+    font-family: NewYork;
+    font-weight: 700;
+}
+
+.movingDesc {
+    font-family: NewYork;
+    font-weight: 500;
+}
+
+
+.Headline {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+}
+
+/* .explore, .outro__text {
+    font-family: NewYork;
+} */

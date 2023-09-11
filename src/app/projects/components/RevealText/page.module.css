@@ -1,0 +1,35 @@
+
+@font-face {
+    font-family: NewYork;
+    src: url("/fonts/NewYork.otf");
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.main{
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 50vh;
+    color: rgb(211, 211, 211);
+}
+
+.body{
+
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.body p{
+    font-size: 3.5vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    margin: 0px;
+    margin-right: 1.5vw;
+    font-weight: 700;
+}
+
+.body span{
+    opacity: 0.2;
+}
