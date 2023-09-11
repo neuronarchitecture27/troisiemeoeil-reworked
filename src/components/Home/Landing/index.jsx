@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <motion.main  className={styles.landing}>
-   <div className={styles.canvas}>
+   {/* <div className={styles.canvas}>
    <Canvas >
     <directionalLight  color={"#ff1717"} intensity={1}  position={[3,0, 2]}/>
     <directionalLight  color={"#ffffff"} intensity={1}  position={[1, 3, 0]}/>
@@ -62,7 +62,7 @@ export default function Home() {
     <OrbitControls enableZoom={false} autoRotate />
           <Model />
       </Canvas>
-    </div>
+    </div> */}
 {/* <div id="canvas-container" className={styles.canvas}> */}
   
       {/* <Canvas>
