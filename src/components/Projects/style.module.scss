@@ -6,7 +6,8 @@
     padding-left: 200px;
     padding-right: 200px;
     flex-direction: column;
-    margin-top: 300px;
+    padding-top: 300px;
+    background-color: black;
     @include sm {
         padding-left: 0px;
         padding-right: 0px;
@@ -14,7 +15,7 @@
   
     .link {
         text-decoration: none;
-        color: black;
+        color: white;
     }
     .body{
         max-width: 1400px;

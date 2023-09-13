@@ -3,7 +3,9 @@
 .description{
     padding-left: 200px;
     padding-right: 200px;
-    margin-top: 200px;
+    padding-top: 200px;
+    padding-bottom: 250px;
+    background-color: black;
     display: flex;
     justify-content: center;
     @include sm {
@@ -23,6 +25,7 @@
         }
         p{
             margin: 0px;
+            color: white;
             &:nth-of-type(1){
                 font-size: 36px;
                 gap: 8px;

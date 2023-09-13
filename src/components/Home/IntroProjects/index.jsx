@@ -19,7 +19,7 @@ export default function Home() {
   }
 
   const colorize = (el) => {
-    el.style.backgroundColor = 'black'
+    el.style.backgroundColor = 'white'
     setTimeout( () => {
       el.style.backgroundColor = 'transparent';
     }, 300)

@@ -73,6 +73,10 @@ export default function Home() {
   </mesh>
       </Canvas> */}
     {/* </div> */}
+    <video width="auto" height="auto" loop autoPlay muted>
+  <source src="bg.webm" type="video/webm" />
+  Your browser does not support the video tag.
+      </video>
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p className='movingDesc' ref={firstText}>Freelance Developer -</p>
