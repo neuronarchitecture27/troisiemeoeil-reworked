@@ -3,3 +3,8 @@ body{
     margin: 0px;
     overflow: hidden; /* Hide scrollbars */
 }
+
+.LogoAnimation {
+    width: auto;
+    height: 100vh;
+}

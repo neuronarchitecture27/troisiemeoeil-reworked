@@ -1,15 +1,14 @@
 'use client'
-import Image from 'next/image'
 import styles from './style.module.scss'
-import { useRef, useLayoutEffect, Suspense } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { slideUp } from './animation';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Model } from './Model';
 import "../../globals.css"
+import Sphere from '@/components/Sphere';
+
+
+
 export default function Home() {
   const firstText = useRef(null);
   const secondText = useRef(null);
@@ -47,36 +46,14 @@ export default function Home() {
 
   return (
     <motion.main  className={styles.landing}>
-   {/* <div className={styles.canvas}>
-   <Canvas >
-    <directionalLight  color={"#ff1717"} intensity={1}  position={[3,0, 2]}/>
-    <directionalLight  color={"#ffffff"} intensity={1}  position={[1, 3, 0]}/>
-    <directionalLight  color={"#ffffff"} intensity={1}  position={[1, 0, 3]}/>
-    <PerspectiveCamera
-    makeDefault
-    position={[500, 0.9, 1.8]}
-    fov={60}
-    enableZoom={false}
-    zoom={6}
-  />
-    <OrbitControls enableZoom={false} autoRotate />
-          <Model />
-      </Canvas>
-    </div> */}
-{/* <div id="canvas-container" className={styles.canvas}> */}
-  
-      {/* <Canvas>
-      <OrbitControls />
-      <mesh>
-    <boxGeometry />
-    <meshStandardMaterial />
-  </mesh>
-      </Canvas> */}
-    {/* </div> */}
+{/*    
     <video width="auto" height="auto" loop autoPlay muted>
   <source src="bg.webm" type="video/webm" />
   Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <Sphere />
+
+
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p className='movingDesc' ref={firstText}>Freelance Developer -</p>

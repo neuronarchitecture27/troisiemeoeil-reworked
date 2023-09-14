@@ -9,7 +9,8 @@ import Description from '../components/Home/Description';
 import SlidingImages from '../components/Home/SlidingImages';
 import Contact from '../components/Home/Contact';
 import IntroProjects from '../components/Home/IntroProjects';
-
+import LogoAnimation from '@/components/LogoAnimation';
+import "./globals.css"
 export default function Work() {
 
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,11 @@ export default function Work() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
+      {/* <div className='LogoAnimation'>
+
+      <LogoAnimation />
+      </div> */}
+
       <Description />
       <IntroProjects />
       <Projects />

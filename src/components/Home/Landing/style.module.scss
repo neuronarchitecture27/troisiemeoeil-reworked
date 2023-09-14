@@ -3,7 +3,7 @@
     display: flex;
     height: 100vh;
     overflow: hidden;
-    background-color: darken($color: #0f0f0f, $amount: 0.1);
+    background-color: darken($color: black, $amount: 0.1);
     .canvas {
       width: 100vw;
       height: 100%;
@@ -53,5 +53,6 @@
         margin-bottom: 100px;
       }
     }
+    
   }
   
