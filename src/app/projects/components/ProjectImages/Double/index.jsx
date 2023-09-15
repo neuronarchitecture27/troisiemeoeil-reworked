@@ -1,7 +1,7 @@
 'use client';
 import styles from './style.module.scss';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import RoundedButton from "./RoundedButton" 
 
 
@@ -14,13 +14,15 @@ export default function Index({projects, reversed}) {
     let currentXPercent = reversed ? 100 : 0;
     const speed = 0.15;
     
-    const manageMouseMove = (e) => {
+    const manageMouseMove = (e) => { 
+      if (window.innerWidth > 1000 ) {
         const { clientX } = e;
         xPercent = (clientX / window.innerWidth) * 100;
         
         if(!requestAnimationFrameId){
             requestAnimationFrameId = window.requestAnimationFrame(animate);
         }
+      }
     }
 
     const animate = () => {

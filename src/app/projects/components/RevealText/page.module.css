@@ -38,10 +38,9 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .main {
-        margin-top: 20vh;
-       
-    }
+    /* .main {
+        margin-top: vh;
+    } */
 
     .body p {
         font-size: 2.5em;
