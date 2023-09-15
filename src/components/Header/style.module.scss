@@ -12,10 +12,17 @@
     font-weight: 300;
     box-sizing: border-box;
     align-items: center;
-    
+    @include md {
+    box-sizing: content-box;
+        width: 100%;
+        justify-content: center;
+      }
     .logo{
         display: flex;
         cursor: pointer;
+        @include md {
+            display: none;
+          }
         p{
             margin: 0px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
@@ -95,6 +102,12 @@
         }
         a{
             cursor: pointer;
+            @include md {
+                font-size: 0.9em;
+              }
+              @include sm {
+                font-size: 0.9em;
+              }
         }
     } 
 }

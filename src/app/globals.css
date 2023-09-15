@@ -1,10 +1,13 @@
 
 body{
     margin: 0px;
-    overflow: hidden; /* Hide scrollbars */
+    overflow: scroll; /* Hide scrollbars */
+    width: 100vw;
+    height: auto;
 }
 
 .LogoAnimation {
     width: auto;
     height: 100vh;
 }
+

@@ -1,8 +1,13 @@
 @import '/breakpoints';
 .main {
     @include sm {
-        width: 100%;
+    box-sizing: content-box; 
+
+        width: 110%;
     height: auto;   
     }
-  
+    @include md {
+    box-sizing: content-box; 
+        width: 110%;
+    }
 }

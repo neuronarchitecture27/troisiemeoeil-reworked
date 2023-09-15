@@ -4,13 +4,13 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 40%;
+    width: 100%;
     color: white;
     z-index: 3;
     .body{
         box-sizing: border-box;
         height: 100%;
-        padding: 100px;
+        padding: 50px 100px 100px 100px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -29,7 +29,11 @@
                 font-size: 11px;
                 margin-bottom: 40px;
             }
-
+                
+            .Headline {
+                    color: black;
+                }
+            
             a{
                 text-decoration: none;
                 color: white;
