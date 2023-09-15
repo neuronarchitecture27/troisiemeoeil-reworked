@@ -17,10 +17,11 @@
   }
     .imageContainer{
       @include md {
-        width: 100%;
+        // width: 100%;
     }
       &:nth-of-type(1){
          @include md {
+        padding-bottom: 15%;
         width: 100%;
     }
         width: 66.66%;
@@ -33,7 +34,7 @@
       }
       
       .stretchyWrapper{
-       
+        width: 100%;
         padding-bottom: 66%;
         position: relative;
         display: flex;
@@ -42,6 +43,7 @@
         align-items: center;
         img{
           object-fit: cover;
+         
         }
         .rounded {
           position: absolute;
@@ -60,6 +62,7 @@
         &:nth-of-type(1){
            @include md {
         width: 100%;
+        padding-bottom: 15%;
     }
           width: 33.33%;
         }

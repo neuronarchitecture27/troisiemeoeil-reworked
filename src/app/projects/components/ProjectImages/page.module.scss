@@ -4,6 +4,10 @@
     margin-top: 5vh;
     color: white;
     padding-bottom: 10vh;
+    @include md {
+      box-sizing: 0;
+          width: 100%;
+        }
 
     h1{
       padding: 20px;
