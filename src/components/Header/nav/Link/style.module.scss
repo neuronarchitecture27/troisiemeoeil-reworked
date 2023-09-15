@@ -1,8 +1,13 @@
+@import '/breakpoints';
+
 .link{
     position: relative;
     display: flex;
     align-items: center;
     font-size: 1.5em;
+    @include md {
+    font-size: 0.75em;
+      }
     margin-left: 1em;
     .indicator{
         width: 10px;
