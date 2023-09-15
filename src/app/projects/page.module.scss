@@ -3,11 +3,11 @@
     @include sm {
     box-sizing: content-box; 
 
-        width: 110%;
+        width: 100%;
     height: auto;   
     }
     @include md {
     box-sizing: content-box; 
-        width: 110%;
+        width: 100%;
     }
 }
