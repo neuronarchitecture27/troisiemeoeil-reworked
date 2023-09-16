@@ -6,7 +6,7 @@ import Descriptions from './descriptions';
 
 const data = [
     {
-        title: "App Development",
+        title: "App Dev",
         description: "Working on the Next-Generation Technologies. Be it on the Web, Mobile or Desktop",
         speed: 0.5
     },
