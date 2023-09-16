@@ -509,6 +509,19 @@
   dependencies:
     tslib "^2.4.0"
 
+"@typeform/embed-react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@typeform/embed-react/-/embed-react-3.0.0.tgz#92dd6b7a73f8fb51a5a325b55f82a80fb8f8d556"
+  integrity sha512-dbRtwwbbHoxF5fb0F7/yvy5jKdhbBneBHpwV8teVcU/cEE1qanqK/ErXpJKo55oKcbsA0bplP1zzDl92JNEQQQ==
+  dependencies:
+    "@typeform/embed" "3.0.0"
+    fast-deep-equal "^3.1.3"
+
+"@typeform/embed@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@typeform/embed/-/embed-3.0.0.tgz#a9fd6d5186cdcbda4aed3553eccd5f5637aa3ffe"
+  integrity sha512-ZsoTAF0w0UrmdkEi7mbCPi3JysRyrERHJuohkmQlwEpcjjCAzU+MbuC0QQY8QLc0bga9XYZNi/d5MNncH+mynA==
+
 "@types/draco3d@^1.4.0":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@types/draco3d/-/draco3d-1.4.2.tgz#7faccb809db2a5e19b9efb97c5f2eb9d64d527ea"

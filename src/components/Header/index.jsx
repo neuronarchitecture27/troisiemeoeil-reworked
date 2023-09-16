@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
 import Link from 'next/link';
+import { PopupButton, Sidetab } from '@typeform/embed-react';
 
 export default function Index() {
     const header = useRef(null);
@@ -67,6 +68,14 @@ export default function Index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
+                <PopupButton id="j4p5sUNU" className={styles.popup}>
+                <Rounded>
+                <a>Become a client!</a>
+
+                </Rounded>
+                    {/* <div className={styles.el}>
+                    </div> */}
+                 </PopupButton>
             
             </div>
         </div>
@@ -81,3 +90,4 @@ export default function Index() {
         </>
     )
 }
+

@@ -9,6 +9,8 @@ import Description from '../components/Home/Description';
 import SlidingImages from '../components/Home/SlidingImages';
 import Contact from '../components/Home/Contact';
 import IntroProjects from '../components/Home/IntroProjects';
+import Services from '../components/Services';
+
 import LogoAnimation from '@/components/LogoAnimation';
 import "./globals.css"
 export default function Work() {
@@ -42,6 +44,7 @@ export default function Work() {
       </div> */}
 
       <Description />
+      <Services />
       <IntroProjects />
       <Projects />
       <SlidingImages />
