@@ -16,7 +16,7 @@ const data = [
         speed: 0.5
     },
     {
-        title: "EComm",
+        title: "ECommerce",
         description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
         speed: 0.67
     },
