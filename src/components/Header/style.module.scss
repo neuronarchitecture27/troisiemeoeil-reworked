@@ -16,6 +16,9 @@
     box-sizing: content-box;
         width: 100%;
         justify-content: center;
+    padding: 10px 0px 10px 0px;
+    font-size: 1.2em;
+
       }
     .logo{
         display: flex;
@@ -116,6 +119,13 @@
                 position: relative;
                 z-index: 1;
             }
+
+            .beClient {
+                @include md {             
+                // height: auto;   
+                  display: none;
+                }
+            }
         }
         a{
             cursor: pointer;
@@ -137,7 +147,7 @@
       display: none;
     }
     @include md {
-    right: 4em;
+    right: 0em;
       }
     .button{
         position: relative;

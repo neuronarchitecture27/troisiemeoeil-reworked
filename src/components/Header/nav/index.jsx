@@ -7,6 +7,9 @@ import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
 import "../../globals.css"
+import Rounded from '@/common/RoundedButton';
+
+import { PopupButton } from '@typeform/embed-react';
 
 const navItems = [
   {
@@ -59,6 +62,15 @@ export default function Index() {
                       })
                     }
             </div>
+
+                {/* <PopupButton id="j4p5sUNU" className={styles.popup}>
+                <div className={styles.beClient}>
+                <Rounded>
+                <a>Become a client!</a>
+                </Rounded>
+                </div>
+                 </PopupButton> */}
+
             <Footer />
         </div>
         <Curve />

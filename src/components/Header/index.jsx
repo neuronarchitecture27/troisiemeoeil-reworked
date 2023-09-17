@@ -68,13 +68,13 @@ export default function Index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
+                
                 <PopupButton id="j4p5sUNU" className={styles.popup}>
+                <div className={styles.beClient}>
                 <Rounded>
                 <a>Become a client!</a>
-
                 </Rounded>
-                    {/* <div className={styles.el}>
-                    </div> */}
+                </div>
                  </PopupButton>
             
             </div>

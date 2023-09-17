@@ -1,6 +1,15 @@
+@import '/breakpoints';
+
 .main {
     width: 100%;
+    min-width: 100vw;
     // overflow-x: ;
     margin: 0;
     background-color: black;
+    @include md {
+        width: 100%;
+    // height: auto;   
+    }
+  
 }
+
