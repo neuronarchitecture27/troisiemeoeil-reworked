@@ -1,12 +1,13 @@
 'use client'
 import React, { useEffect } from 'react'
-import styles from './styles.module.scss'
+
 import anime from "animejs";
+import "./index.css"
 
 function ProjectHeader() {
 
   const TextRevealWithFade = () => {
-    const decors = document.querySelectorAll(".highlight");
+    const decors = document.querySelectorAll(".container");
 
     const xc = anime
       .timeline({
@@ -14,24 +15,13 @@ function ProjectHeader() {
       })
       .add({
         targets: "#text-box #my-text",
-      
         opacity: [0, 1],
         delay: 1000,
         easing: "easeOutExpo",
-        duration: 1400
+        duration: 10800
       })
-      .add(
-        {
-          targets: decors,
-          width: "100%",
-          paddingRight: "0.9rem",
-          duration: 500,
-          endDelay: 500,
-          easing: "linear",
-          loop: true
-        },
-        "+=200"
-      );
+      
+      
     xc.play();
   };
   useEffect(() => {
@@ -39,8 +29,15 @@ function ProjectHeader() {
   }, []);
 
   return (
-    <div className={styles.container} id='text-box'>
+    <div className='container' id='text-box'>
+      {/* <div>
+        
+<video id="background-video" autoplay loop muted >
+<source src="./spherepart.webp" type="video/webp" />
+</video>
+      </div> */}
       <p id='my-text'>Talent Agency Portfolio Website</p>
+        
     </div>
   )
 }

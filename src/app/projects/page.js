@@ -31,8 +31,6 @@ export default function Work() {
       {isLoading && <Transition />}
     </AnimatePresence>
     <RevealText />
-    {/* <HoverDescription />  
-    <ImageSlider /> */}
     <ProjectImages />
     <Contact />
   </main>

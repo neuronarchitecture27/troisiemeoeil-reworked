@@ -16,11 +16,18 @@ export default function Index() {
                 <p className='DescriptionHead'>
                 {
                     phrase.split(" ").map( (word, index) => {
-                        return <span key={index} className={styles.mask}><motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
+                        return <span key={index} 
+                        className={styles.mask}>
+                            <motion.span variants={slideUp} 
+                            custom={index} 
+                            animate={isInView ? "open" : "closed"} 
+                            key={index}>{word}</motion.span></span>
                     })
                 }
                 </p>
-                <motion.p variants={opacity} animate={isInView ? "open" : "closed"}  className='Headline'>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</motion.p>
+                <motion.p variants={opacity}
+                 animate={isInView ? "open" : "closed"}  
+                 className='Headline'>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
                     <Rounded className={styles.button}>
                         <p className='Headline'>Start Here!</p>

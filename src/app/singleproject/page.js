@@ -3,18 +3,12 @@ import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Transition from "../../components/Transition"
-
-import Landing from '@/components/Home/Landing';
-import Projects from '@/components/Projects';
-import Description from '@/components/Home/Description';
-import SlidingImages from '@/components/Home/SlidingImages';
 import Contact from '@/components/Home/Contact';
-import IntroProjects from '@/components/Home/IntroProjects';
-import Services from '@/components/Services';
-
-import LogoAnimation from '@/components/LogoAnimation';
 import ProjectHeader from './components/ProjectHeader';
-// import "./globals.css"
+import PrjDescription from './components/PrjDescription';
+
+
+
 export default function Work() {
 
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +35,7 @@ export default function Work() {
        </AnimatePresence>
        
       <ProjectHeader />
+      <PrjDescription />
       <Contact />
     </main>
   )
