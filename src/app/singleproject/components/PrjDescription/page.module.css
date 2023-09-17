@@ -91,3 +91,31 @@
     height: 500px;
     top: -250px;
   }
+
+  
+@media only screen and (max-width: 600px) {
+  .body {
+    width: 100vw;
+    margin: 0;
+  }
+  .description {
+    width: 100%;
+    margin: 0;
+
+    justify-content: flex-start;
+  }
+  .description p:nth-of-type(1) {
+    padding: 0% 3% 0% 3%;
+  }
+  .description p:nth-of-type(2) {
+    padding: 0% 5% 0% 5%;
+    font-size: 20px;
+  }
+  .tagsContainer {
+    width: 100%;
+  }
+
+  .tagsContainer p:nth-of-type(1) {
+    padding: 0% 3% 0% 3%;
+  }
+}

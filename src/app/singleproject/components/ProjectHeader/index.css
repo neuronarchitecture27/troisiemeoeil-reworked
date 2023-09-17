@@ -17,3 +17,10 @@
         font-family: NewYork;
     }
 
+
+    @media only screen and (max-width: 600px) {
+            #my-text {
+                font-size: 16vw;
+                padding-left: 10px;
+            }
+    }

@@ -70,7 +70,7 @@ export default function Home() {
 
             <div className={styles.description}>
               <p>Smart Development</p>
-              <p>Combining unique design and rich technology, we build digital products exactly as they were designed, without shortcuts or simplifications.</p>
+              <p className={styles.descText}>Combining unique design and rich technology, we build digital products exactly as they were designed, without shortcuts or simplifications.</p>
             </div>
             <div className={styles.tagsContainer}>
               <p>Areas</p>
