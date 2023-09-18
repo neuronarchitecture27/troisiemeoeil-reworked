@@ -61,15 +61,15 @@ export default function Index() {
                         </div>
                       })
                     }
-            </div>
 
-                {/* <PopupButton id="j4p5sUNU" className={styles.popup}>
+                <PopupButton id="j4p5sUNU" className={styles.popup}>
                 <div className={styles.beClient}>
                 <Rounded>
                 <a>Become a client!</a>
                 </Rounded>
                 </div>
-                 </PopupButton> */}
+                 </PopupButton>
+            </div>
 
             <Footer />
         </div>

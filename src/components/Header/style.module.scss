@@ -146,9 +146,9 @@
     @include sm {
       display: none;
     }
-    @include md {
-    right: 0em;
-      }
+    // @include md {
+    //     right: 1em;
+    //   }
     .button{
         position: relative;
         margin: 20px;

@@ -1,3 +1,4 @@
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -111,6 +112,10 @@
     padding: 0% 5% 0% 5%;
     font-size: 20px;
   }
+  .container {
+    height: 70vh;
+  }
+
   .tagsContainer {
     width: 100%;
   }

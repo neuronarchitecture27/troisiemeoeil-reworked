@@ -35,6 +35,17 @@
                 font-size: 11px;
                 margin-bottom: 40px;
             }
+
+            @include md {
+                
+                button {
+                    background-color: transparent;
+                    display: flex;
+                    justify-content: center;
+                    margin: 10%;
+                    border: 0  ;
+                }
+                  }
                 
             .Headline {
                     color: white;

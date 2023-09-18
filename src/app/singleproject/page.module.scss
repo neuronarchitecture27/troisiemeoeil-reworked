@@ -3,12 +3,16 @@
 .main {
     width: 100%;
     min-width: 100vw;
-    // overflow-x: ;
+    overflow: hidden;
     margin: 0;
     background-color: black;
     @include md {
         width: 100%;
     // height: auto;   
+    }
+    .parralex {
+        position: sticky;
+        top: 0;
     }
   
 }

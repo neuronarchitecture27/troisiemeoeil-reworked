@@ -19,6 +19,9 @@
 
 
     @media only screen and (max-width: 600px) {
+        .container {
+            height: 70vh;
+        }
             #my-text {
                 font-size: 16vw;
                 padding-left: 10px;

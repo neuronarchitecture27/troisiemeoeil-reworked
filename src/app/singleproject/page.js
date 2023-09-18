@@ -6,6 +6,7 @@ import Transition from "../../components/Transition"
 import Contact from '@/components/Home/Contact';
 import ProjectHeader from './components/ProjectHeader';
 import PrjDescription from './components/PrjDescription';
+import PrjImages from './components/PrjImages';
 
 
 
@@ -33,9 +34,11 @@ export default function Work() {
       <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
        </AnimatePresence>
-       
+       <div className={styles.parralex}>
       <ProjectHeader />
       <PrjDescription />
+       </div>
+      <PrjImages />
       <Contact />
     </main>
   )
