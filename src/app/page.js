@@ -13,6 +13,7 @@ import Services from '../components/Services';
 
 import LogoAnimation from '@/components/LogoAnimation';
 import "./globals.css"
+import ServiceSection from '@/components/Home/ServiceSection';
 export default function Work() {
 
   const [isLoading, setIsLoading] = useState(true);
@@ -47,6 +48,7 @@ export default function Work() {
       <Services />
       <IntroProjects />
       <Projects />
+      <ServiceSection />
       <SlidingImages />
       <Contact />
     </main>

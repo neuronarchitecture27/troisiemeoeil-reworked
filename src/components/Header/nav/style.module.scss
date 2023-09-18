@@ -35,10 +35,15 @@
                 font-size: 11px;
                 margin-bottom: 40px;
             }
-
+            .popup {            
+                display: none;       
+            }
             @include md {
-                
+                .popup {            
+                    display: flex;       
+                }
                 button {
+                    
                     background-color: transparent;
                     display: flex;
                     justify-content: center;

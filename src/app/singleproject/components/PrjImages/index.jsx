@@ -11,7 +11,6 @@ function PrjImages() {
             alt="portfolio Image One"
           width={2900}
           height={2900}
-          quality={100}
         />
     </div>
   )
