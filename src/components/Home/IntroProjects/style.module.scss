@@ -1,3 +1,5 @@
+@import '/breakpoints';
+
 .container {
     display: flex;
     padding-top: 20vh;
@@ -25,7 +27,13 @@
     text-transform: uppercase;
     mix-blend-mode: difference;
     color: white;
+   
   }
+  @include md {
+    .container .body {
+      font-size: 12vw;
+    }
+}
   
   .grid .column{
     width: 5vw;

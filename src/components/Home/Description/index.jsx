@@ -27,7 +27,9 @@ export default function Index() {
                 </p>
                 <motion.p variants={opacity}
                  animate={isInView ? "open" : "closed"}  
-                 className='Headline'>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</motion.p>
+                 className='Headline'>
+                The combination of my passion for design, code & interaction positions me in a unique place in the web design world.
+                </motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
                     <Rounded className={styles.button}>
                         <p className='Headline'>Start Here!</p>

@@ -2,8 +2,10 @@
 @font-face {
     font-family: NewYork;
     src: url("/fonts/NewYork.otf");
-  
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+ 
 .section{
     position: relative;
     width: 100%;
@@ -227,15 +229,64 @@ nav ul{
     transition: all 1s linear;
     background-color: white;
     color: black;
-    
 }
 
 .info {
     display: flex;
-    justify-content: end;
-    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
     font-size: 4em;
     text-align: end;
     padding: 1em;
     font-family: NewYork;
+}
+
+.info_desc {
+    font-size: 0.3em;
+    font-family: 'Lato', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .section_inverted {
+        padding-top: 15%;
+        border: 0 transparent;
+    }
+    .header {
+        border: 0;
+    }
+    .circle__container__inner {
+        filter: blur(1px);
+    }
+    .circleInfo_container {
+        /* position: relative; */
+        width: 100vw;
+        height: 100%;
+        z-index: 50;
+        color: #fff;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        color: black;
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.7em;
+        text-align: center;
+        padding: 1.2em;
+        font-family: NewYork;
+        color: white;
+    }
+    .info_desc {
+        text-align: justify;
+        font-size: 0.5em;
+        font-family: 'Lato', sans-serif;
+    }
 }

@@ -9,13 +9,13 @@ function Sphere() {
             var timeout = null;
             function resize() {
               if (timeout) clearTimeout(timeout);
-              anime.set(el, { scale: 1 });
+              anime.set(el, { scale: 1.5 });
               var pad = padding || 0;
               var parentEl = el.parentNode;
               var elOffsetWidth = el.offsetWidth - pad;
               var parentOffsetWidth = parentEl.offsetWidth;
               var ratio = parentOffsetWidth / elOffsetWidth;
-              timeout = setTimeout(anime.set(el, { scale: ratio }), 10);
+              timeout = setTimeout(anime.set(el, { scale: ratio * 1 }), 10);
             }
             resize();
             window.addEventListener("resize", resize);
@@ -23,6 +23,7 @@ function Sphere() {
           
           var sphereAnimation = (function () {
             var sphereEl = document.querySelector(".sphere-animation");
+
             var spherePathEls = sphereEl.querySelectorAll(".sphere path");
             var pathLength = spherePathEls.length;
             var hasStarted = false;
@@ -106,7 +107,7 @@ function Sphere() {
 
   return (
    <div class="animation-wrapper">
-  <div class="sphere-animation">
+  <div class="sphere-animation" >
     <svg class="sphere" viewBox="0 0 440 440" stroke="rgba(80,80,80,.35)">
       <defs>
         <linearGradient id="sphereGradient" x1="5%" x2="5%" y1="0%" y2="15%">
@@ -138,6 +139,7 @@ function Sphere() {
       <path d="M109.698 109.332c-24.408 24.407-51.12 37.268-59.663 28.726-8.542-8.543 4.319-35.255 28.727-59.662 24.407-24.408 51.12-37.27 59.662-28.727 8.543 8.543-4.319 35.255-28.726 59.663z"/>
     </svg>
   </div>
+  
 </div>
 
   )

@@ -26,3 +26,24 @@
       stroke-width: .4px;
     }
   }
+
+  @media (max-width: 500px) {
+
+    .sphere {
+      stroke-width: .4px;
+      width: 76em;
+      position: absolute;
+      right: -87%;
+      
+    }
+    .sphere-animation {
+      position: absolute;
+    left: 13%;
+    top: 15%;
+    max-width: 500px;
+    width: 100vw;
+    height: auto;
+    margin: -20px 0 0 -20px;
+    }
+    
+  }

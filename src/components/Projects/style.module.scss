@@ -12,6 +12,10 @@
         padding-left: 0px;
         padding-right: 0px;
     }
+    @include md {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
   
     .link {
         text-decoration: none;
@@ -28,6 +32,10 @@
         @include sm {
             max-width: 627px;
         }
+        @include md {
+            max-width: 627px;
+        }
+       
     }
     
     .modalContainer{

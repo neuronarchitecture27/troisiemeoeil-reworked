@@ -9,10 +9,15 @@
     border-top: 1px solid rgb(201, 201, 201);
     cursor: pointer;
     transition: all 0.2s;
-        @include sm {
-            flex-direction: column;
+        @include md {
             width: 374px;
-            padding: 50px 0px 50px 0px;
+           
+                padding: 60px 0px 50px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            
                 }
     h2{
         font-size: 60px;
@@ -25,6 +30,10 @@
     p{
         transition: all 0.4s;
         font-weight: 300;
+        @include md {
+          color: white;
+            
+                }
     }
 
     &:last-of-type{
