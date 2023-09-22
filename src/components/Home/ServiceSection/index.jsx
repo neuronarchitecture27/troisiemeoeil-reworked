@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./index.css"
-import Image from 'next/image';
 function ServiceSection() {
     useEffect(()=> {
         const circleArea = document.querySelector('.circle__container__inner');
@@ -50,14 +49,29 @@ function animate(){
     circles[3].style.transform = `translate(-50%, -50%) translate3d(${positions.circleFour.x}px, ${positions.circleFour.y}px, 0)`;
 
     requestAnimationFrame(animate)
+
+    let posCircleOneX = (Math.round(positions.circleOne.x * 100) / 100).toFixed(1)
+    let posCircleTwoX =  (Math.round(positions.circleTwo.x * 100) / 100).toFixed(1)
+
+    let posCircleOneY =   (Math.round(positions.circleOne.y * 100) / 100).toFixed(1)
+    let posCircleTwoY =   (Math.round(positions.circleTwo.y * 100) / 100).toFixed(1)
+    ;
+    // console.log(posCircleOneX, posCircleOneY );
+        if (posCircleOneX == posCircleTwoX && posCircleOneY == posCircleTwoY)
+        return setAligned(true)
 }
 
 animate()
     }, [])
 
+    const [aligned, setAligned] = useState(false)
+
+    useEffect(()=> {
+    if (aligned == true) return console.log("state updated"); 
+    })
 
   return (
-    <section>
+    <section  className={`${aligned ? "section" : "section_inverted"}`} onClick={()=> {setAligned(false)}}>
     <div className="header">
         <div className="header__container">
             
@@ -67,42 +81,30 @@ animate()
     <div className="circle__container">
         
         <div className="innerCirc">
-            <div className="vertical__line"></div>
-        <div className="horizontal__line"></div>
+            <div className={`${!aligned ? "vertical__line" : "vertical__line_inverted"}`}></div>
+        <div className={`${!aligned ? "horizontal__line" : "horizontal__line_inverted"}`}></div>
         <div className="circle__container__inner">
            
-            <div className="circle middle__circle"></div>
-            <div className="circle circle__one">Growth</div>
-            <div className="circle circle__two">Insight</div>
-            <div className="circle circle__three">Product</div>
-            <div className="circle circle__four">Conception 2</div>
+            <div className={`${!aligned ? "circle middle__circle" : "circle_inverted middle__circle"}`}></div>
+            <div className={`${!aligned ? "circle circle__one" : "circle_inverted circle__one"}`}></div>
+            <div className={`${!aligned ? "circle circle__two" : "circle_inverted circle__two"}`}></div>
+            <div className={`${!aligned ? "circle circle__three" : "circle_inverted circle__three"}`}></div>
+            <div className={`${!aligned ? "circle circle__four" : "circle_inverted circle__four"}`}></div>
         </div>
         </div>
-        <div className="circleInfo_container">
+        <div className={`${!aligned ? "circleInfo_container" : "circleInfo_container_inverted"}`}>
+          
             <div className="info">
-                <Image src="/images/ball-color-unscreen.gif" 
-                alt='ball-color-unscreen' 
-                width={300} height={300} 
-               />
-            {/* <video autoPlay mute loop={true} >
-  <source src="/videos/ball-color.mp4" type="video/mp4"/>
-  <source src="/videos/ball-color.webm" type="video/webm"/>
-</video> */}
+            TECH THAT’S LIGHT AS AIR
             </div>
             <div className="info">
-            <video autoPlay mute preload="none">
-  <source src="one-does-not-simply.webm" type="video/webm"/>
-</video>
+            STAND ABOVE THE NOISE
             </div>
             <div className="info">
-            <video autoPlay mute preload="none">
-  <source src="one-does-not-simply.webm" type="video/webm"/>
-</video>
+            DESIGN-POWERED PRODUCT GROWTH
             </div>
             <div className="info">
-            <video autoPlay mute preload="none">
-  <source src="one-does-not-simply.webm" type="video/webm"/>
-</video>
+            BESPOKE SOLUTIONS
             </div>
         </div>
     </div>

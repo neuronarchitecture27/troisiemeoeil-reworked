@@ -1,9 +1,23 @@
 
-
-section{
+@font-face {
+    font-family: NewYork;
+    src: url("/fonts/NewYork.otf");
+  
+    }
+.section{
     position: relative;
     width: 100%;
     min-height: 100vh;
+    background-color: black;
+   
+}
+
+.section_inverted {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+  
 }
 
 .header{
@@ -37,7 +51,7 @@ nav ul{
     top: 50px;
     height: calc(100vh - 100px);
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
     background-color: black;
     overflow-x: hidden ;
 }
@@ -52,6 +66,16 @@ nav ul{
     opacity: .4;
 }
 
+.vertical__line_inverted{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    opacity: .4;
+}
+
 .horizontal__line{
     position: absolute;
     top: 50%;
@@ -59,6 +83,16 @@ nav ul{
     width: 100%;
     height: 1px;
     background-color: white;
+    opacity: .4;
+}
+
+.horizontal__line_inverted{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 100%;
+    height: 1px;
+    background-color: black;
     opacity: .4;
 }
 
@@ -86,8 +120,23 @@ nav ul{
     will-change: transform;
     z-index: 20;
 
-    color: white;
-    font-size: large;
+    color: black;
+}
+
+.circle_inverted{
+    position: absolute;
+    transform-origin: centre;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32vh;
+    height: 32vh;
+    border: 1px dashed black;
+    border-radius: 50%;
+    will-change: transform;
+    z-index: 20;
+
+    color: black;
 }
 
 .sticky__section{
@@ -146,6 +195,7 @@ nav ul{
 .innerCirc {
     z-index: 10;
 }
+
 .circleInfo_container {
     /* position: relative; */
     width: 100vw;
@@ -155,10 +205,37 @@ nav ul{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    color: black;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+.circleInfo_container_inverted {
+    /* position: relative; */
+    width: 100vw;
+    height: 100%;
+    z-index: 50;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+    background-color: white;
+    color: black;
+    
 }
 
 .info {
     display: flex;
     justify-content: end;
-    align-items: end;
+    align-items: start;
+    font-size: 4em;
+    text-align: end;
+    padding: 1em;
+    font-family: NewYork;
 }
