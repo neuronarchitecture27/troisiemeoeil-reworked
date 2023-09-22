@@ -75,7 +75,7 @@ animate()
             <div className="circle circle__one">Growth</div>
             <div className="circle circle__two">Insight</div>
             <div className="circle circle__three">Product</div>
-            <div className="circle circle__four">Conception</div>
+            <div className="circle circle__four">Conception 2</div>
         </div>
         </div>
         <div className="circleInfo_container">
