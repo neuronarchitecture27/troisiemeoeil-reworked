@@ -39,10 +39,7 @@ export default function Work() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
-      {/* <div className='LogoAnimation'>
-
-      <LogoAnimation />
-      </div> */}
+    
 
       <Description />
       <Services />

@@ -50,11 +50,12 @@ function animate(){
 
     requestAnimationFrame(animate)
 
-    let posCircleOneX = (Math.round(positions.circleOne.x * 100) / 100).toFixed(1)
-    let posCircleTwoX =  (Math.round(positions.circleTwo.x * 100) / 100).toFixed(1)
+    let posCircleOneX = (positions.circleOne.x * 100).toFixed(1)
+    let posCircleTwoX =  (positions.circleFour.x * 100).toFixed(1)
 
-    let posCircleOneY =   (Math.round(positions.circleOne.y * 100) / 100).toFixed(1)
-    let posCircleTwoY =   (Math.round(positions.circleTwo.y * 100) / 100).toFixed(1)
+    let posCircleOneY =   (positions.circleOne.y * 100).toFixed(1)
+    let posCircleTwoY =   (positions.circleTwo.y * 100).toFixed(1)
+
     ;
     // console.log(posCircleOneX, posCircleOneY );
         if (posCircleOneX == posCircleTwoX && posCircleOneY == posCircleTwoY)
@@ -62,6 +63,14 @@ function animate(){
 }
 
 animate()
+window.addEventListener("click", ()=> {
+    circleArea.addEventListener('mousemove', (e) => {
+        x = e.clientX;
+        return x
+    })
+    console.log(x);
+})
+
     }, [])
 
     const [aligned, setAligned] = useState(false)
