@@ -50,27 +50,24 @@ function animate(){
 
     requestAnimationFrame(animate)
 
-    let posCircleOneX = (positions.circleOne.x * 100).toFixed(1)
-    let posCircleTwoX =  (positions.circleFour.x * 100).toFixed(1)
+    let posCircleOneX = (Math.round(positions.circleOne.x * 100) / 100).toFixed(2)
+    let posCircleTwoX =  (Math.round(positions.circleFour.x * 100) / 100).toFixed(2)
 
-    let posCircleOneY =   (positions.circleOne.y * 100).toFixed(1)
-    let posCircleTwoY =   (positions.circleTwo.y * 100).toFixed(1)
-
+    let posCircleOneY =   (Math.round(positions.circleOne.y * 100) / 100).toFixed(2)
+    let posCircleTwoY =   (Math.round(positions.circleFour.y * 100) / 100).toFixed(2)
     ;
     // console.log(posCircleOneX, posCircleOneY );
-        if (posCircleOneX == posCircleTwoX && posCircleOneY == posCircleTwoY)
-        return setAligned(true)
+    
 }
-
-animate()
-window.addEventListener("click", ()=> {
-    circleArea.addEventListener('mousemove', (e) => {
-        x = e.clientX;
-        return x
-    })
+circleArea.addEventListener('mousemove', (e) => {
+    x = e.clientX;
+    y = e.clientY;
+    let width = window.innerWidth / 2
+    console.log(width);
     console.log(x);
 })
 
+animate()
     }, [])
 
     const [aligned, setAligned] = useState(false)
@@ -80,7 +77,7 @@ window.addEventListener("click", ()=> {
     })
 
   return (
-    <section  className={`${aligned ? "section" : "section_inverted"}`} onClick={()=> {setAligned(false)}}>
+    <section  className={`${aligned ? "section" : "section_inverted"}`} onClick={()=> {setAligned(!aligned)}}>
     <div className="header">
         <div className="header__container">
             

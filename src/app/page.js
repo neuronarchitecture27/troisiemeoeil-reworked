@@ -1,6 +1,6 @@
 'use client';
 import styles from './page.module.scss'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Preloader from '../components/Header/Preloader';
 import Landing from '../components/Home/Landing';
@@ -34,13 +34,12 @@ export default function Work() {
   }, [])
 
   return (
-    <main className={styles.main}>
+  <Suspense>
+      <main className={styles.main}>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Landing />
-    
-
       <Description />
       <Services />
       <IntroProjects />
@@ -49,5 +48,6 @@ export default function Work() {
       <SlidingImages />
       <Contact />
     </main>
+  </Suspense>
   )
 }
