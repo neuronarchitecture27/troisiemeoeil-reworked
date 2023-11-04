@@ -48,6 +48,9 @@
         .rounded {
           position: absolute;
           bottom: 50%;
+              @include md {
+                bottom: 30%;
+            }
         }
         .viewCase {
           font-family: Lato;

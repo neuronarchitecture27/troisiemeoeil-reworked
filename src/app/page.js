@@ -34,20 +34,18 @@ export default function Work() {
   }, [])
 
   return (
-  <Suspense>
-      <main className={styles.main}>
-      <AnimatePresence mode='wait'>
-        {isLoading && <Preloader />}
-      </AnimatePresence>
-      <Landing />
-      <Description />
-      <Services />
-      <IntroProjects />
-      <Projects />
-      <ServiceSection />
-      <SlidingImages />
-      <Contact />
+    <main className={styles.main}>
+    <AnimatePresence mode='wait'>
+    {isLoading && <Preloader />}
+    </AnimatePresence>
+    <Landing />
+    <Description />
+    <Services />
+    <IntroProjects />
+    <Projects />
+    <ServiceSection />
+    <SlidingImages />
+    <Contact />
     </main>
-  </Suspense>
-  )
+    )
 }
