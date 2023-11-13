@@ -30,13 +30,7 @@ function ProjectHeader() {
 
   return (
     <div className='container' id='text-box'>
-      {/* <div>
-        
-<video id="background-video" autoplay loop muted >
-<source src="./spherepart.webp" type="video/webp" />
-</video>
-      </div> */}
-      <p id='my-text'>Talent Agency Portfolio Website</p>
+      <p id='my-text'>Software Agency Portfolio Website</p>
         
     </div>
   )

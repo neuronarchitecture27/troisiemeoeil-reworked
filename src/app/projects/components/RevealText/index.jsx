@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import "./global.css"
-const phrase = "We're all about the magic of design and the wizardry of technology, crafting brands that not only dazzle and perform brilliantly but also have the power to grow beyond imagination! Check for yourself.";
+const phrase = "The magic of design and the wizardry of technology are embraced, with brands crafted that are not only dazzling and performing brilliantly but also possessing the power to grow beyond imagination.";
 
 export default function Home() {
 
