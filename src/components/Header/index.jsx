@@ -8,6 +8,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
+import Heading from '../../components/Heading';
+
 import Link from 'next/link';
 import { PopupButton, Sidetab } from '@typeform/embed-react';
 
@@ -80,13 +82,14 @@ export default function Index() {
             </div>
         </div>
         <div ref={button} className={styles.headerButtonContainer}>
-            <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
+        <Heading />
+            {/* <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
-            </Rounded>
+            </Rounded> */}
         </div>
-        <AnimatePresence mode="wait">
-            {isActive && <Nav />}
-        </AnimatePresence>
+        {/* <AnimatePresence mode="wait">
+            {isActive && <Heading />}
+        </AnimatePresence> */}
         </>
     )
 }
