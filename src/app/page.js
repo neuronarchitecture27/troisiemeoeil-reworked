@@ -38,7 +38,9 @@ export default function Work() {
     <AnimatePresence mode='wait'>
     {isLoading && <Preloader />}
     </AnimatePresence>
+    <div className='mobile'>
     <Landing />
+    </div>
     <Description />
     <Services />
     <IntroProjects />

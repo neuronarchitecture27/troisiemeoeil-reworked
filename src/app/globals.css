@@ -11,6 +11,9 @@ body{
         overflow: scroll;
         width: 100%;
     }
+    .mobile {
+        display: none;
+    }
 }
 
 
