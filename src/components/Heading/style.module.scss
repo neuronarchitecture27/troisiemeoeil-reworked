@@ -1,7 +1,12 @@
+@import '/breakpoints';
+
 .header{
     position: fixed;
     right: 50px;
     top: 50px;
+    @include md {
+        top: 100px;
+    }
     z-index: 150;
     .menu{
         width: 480px;

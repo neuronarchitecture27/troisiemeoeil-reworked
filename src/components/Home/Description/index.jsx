@@ -3,6 +3,8 @@ import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { slideUp, opacity } from './animation';
 import Rounded from '../../../common/RoundedButton';
+import { PopupButton } from '@typeform/embed-react';
+
 import "../../globals.css"
 
 export default function Index() {
@@ -30,11 +32,13 @@ export default function Index() {
                  className='Headline'>
                 The combination of my passion for design, code & interaction positions me in a unique place in the web design world.
                 </motion.p>
+                <PopupButton id="j4p5sUNU" className={styles.popup}>
                 <div data-scroll data-scroll-speed={0.1}>
                     <Rounded className={styles.button}>
                         <p className='Headline'>Start Here!</p>
                     </Rounded>
                 </div>
+                </PopupButton>
             </div>
         </div>
     )
