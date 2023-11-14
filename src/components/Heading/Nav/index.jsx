@@ -2,7 +2,7 @@ import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { links, footerLinks } from './data';
 import { perspective, slideIn } from "./anim";
-
+import Link from 'next/link'
 export default function index() {
   return (
     <div className={styles.nav}>
@@ -12,18 +12,21 @@ export default function index() {
                 const { title, href } = link;
                 return (
                     <div key={`b_${i}`} className={styles.linkContainer}>
+                        <Link  href={href}>
                         <motion.div
-                          href={href}
+                         
                           custom={i}
                           variants={perspective}
                           initial="initial"
                           animate="enter"
                           exit="exit"
                         >
+
                             <a>
                                 {title}
                             </a>
                         </motion.div>
+                        </Link>
                     </div>
                 )
             })

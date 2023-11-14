@@ -1,23 +1,23 @@
 export const links = [
     {
         title: "Projects",
-        href: "/"
+        href: "/projects"
     },
     {
-        title: "Agency",
+        title: "Blog",
         href: "/"
     },
     {
         title: "Expertise",
         href: "/"
     },
-    {
-        title: "Careers",
-        href: "/"
-    },
+    // {
+    //     title: "Careers",
+    //     href: "/"
+    // },
     {
         title: "Contact",
-        href: "/"
+        href: "/contact"
     }
 ]
 

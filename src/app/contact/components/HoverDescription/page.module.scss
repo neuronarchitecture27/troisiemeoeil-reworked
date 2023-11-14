@@ -1,3 +1,5 @@
+@import '/breakpoints';
+
 @font-face {
     font-family: NewYork;
     src: url("/fonts/NewYork.otf");
@@ -19,12 +21,20 @@
       padding-left: 1em;
       background-color: black;
       cursor: default;
-      
+            @include md {
+            line-height: 40px;
+              padding:0px;
+            }
+          
       p{
         width: 70%;
         font-family: NewYork;
         font-size: 1em;
         padding:40px;
+        @include md {
+        padding:0px;
+        font-size: 45px; 
+      }
       }
       span{
         color: #ec4e39;
@@ -38,5 +48,10 @@
       background: #ec4e39;
       position: absolute;
       color: black;
+      @include md {
+          font-size: 10px;
+          display: none;
+          padding-left: 0em;
+    }
     }
   }
