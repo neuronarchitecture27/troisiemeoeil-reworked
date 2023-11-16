@@ -1,3 +1,6 @@
+@import '/breakpoints';
+
+
 .slidingImages{
     display: flex;
     flex-direction: column;
@@ -6,12 +9,16 @@
     padding-top: 200px;
     background-color: black;
     z-index: 1;
+ 
     .slider{
         display: flex;
         position: relative;
         gap: 3vw;
         width: 120vw;
         left: -10vw;
+        @include md {
+            width: 230vw;
+            }
         .project{
             width: 25%;
             height: 20vw;
@@ -19,13 +26,17 @@
             align-items: center;
             justify-content: center;
             border-radius: 15px;
+            @include md {
+                height: 55vw;
 
+                }
             .imageContainer{
                 position: relative;
                 width: 80%;
                 height: 80%;
                 img{
                     object-fit: cover;
+                    border-radius: 15px;
                 }
             }
         }

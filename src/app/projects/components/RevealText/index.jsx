@@ -9,8 +9,8 @@ const phrase = "The magic of design and the wizardry of technology are embraced,
 export default function Home() {
 
   let refs = useRef([]);
-  const body = useRef(null);
-  const container = useRef(null);
+  const body = useRef();
+  const container = useRef();
 
   useEffect( () => {
     gsap.registerPlugin(ScrollTrigger);

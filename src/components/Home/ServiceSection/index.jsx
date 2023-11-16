@@ -77,7 +77,7 @@ animate()
     })
 
   return (
-    <section  className={`${aligned ? "section" : "section_inverted"}`} onClick={()=> {setAligned(!aligned)}}>
+    <section  className={`${"section" }`} onClick={()=> {setAligned(!aligned)}}>
     <div className="header">
         <div className="header__container">
             
@@ -87,18 +87,18 @@ animate()
     <div className="circle__container">
         
         <div className="innerCirc">
-            <div className={`${!aligned ? "vertical__line" : "vertical__line_inverted"}`}></div>
-        <div className={`${!aligned ? "horizontal__line" : "horizontal__line_inverted"}`}></div>
+            <div className={`${"vertical__line" }`}></div>
+        <div className={`${ "horizontal__line" }`}></div>
         <div className="circle__container__inner">
            
-            <div className={`${!aligned ? "circle middle__circle" : "circle_inverted middle__circle"}`}></div>
-            <div className={`${!aligned ? "circle circle__one" : "circle_inverted circle__one"}`}></div>
-            <div className={`${!aligned ? "circle circle__two" : "circle_inverted circle__two"}`}></div>
-            <div className={`${!aligned ? "circle circle__three" : "circle_inverted circle__three"}`}></div>
-            <div className={`${!aligned ? "circle circle__four" : "circle_inverted circle__four"}`}></div>
+            <div className={`${"circle middle__circle" }`}></div>
+            <div className={`${"circle circle__one" }`}></div>
+            <div className={`${"circle circle__two" }`}></div>
+            <div className={`${"circle circle__three" }`}></div>
+            <div className={`${"circle circle__four" }`}></div>
         </div>
         </div>
-        <div className={`${!aligned ? "circleInfo_container" : "circleInfo_container_inverted"}`}>
+        <div className={`${"circleInfo_container"}`}>
           
             <div className="info">
             TECH THAT’S LIGHT AS AIR
@@ -115,7 +115,7 @@ Our expertise lies in seamlessly translating these elements into a cohesive and 
             </p>
             </div>
             <div className="info">
-            DESIGN-POWERED PRODUCT GROWTH
+            DESIGN-POWERED <br /> PRODUCT GROWTH
             <p className='info_desc'>
             Our design agency partners with startups and tech companies, leveraging its expertise in design to fuel their growth.
 We deliver interactive design solutions, increasing user engagement opportunities, and streamlining workflows through intuitive design systems.
