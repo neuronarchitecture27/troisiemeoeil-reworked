@@ -16,7 +16,7 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
     createAnimation();
   }, [])
-
+  console.log(refs);
   const createAnimation = () => {
       gsap.to(refs.current, {
         scrollTrigger: {

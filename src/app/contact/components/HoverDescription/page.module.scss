@@ -18,7 +18,7 @@
       color: #d8d2c9;
       font-size: 100px;
       line-height: 96px;
-      padding-left: 1em;
+      padding-left: 0.2em;
       background-color: black;
       cursor: default;
             @include md {
@@ -27,9 +27,9 @@
             }
           
       p{
-        width: 70%;
+        width: 90%;
         font-family: NewYork;
-        font-size: 1em;
+        font-size: 60%;
         padding:40px;
         @include md {
         padding:0px;

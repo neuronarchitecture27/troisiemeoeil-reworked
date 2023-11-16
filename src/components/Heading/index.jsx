@@ -1,10 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react'
+import {   useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 import Button from './Button';
 import styles from './style.module.scss';
 import Nav from './Nav';
-import { usePathname } from 'next/navigation';
 const menu = {
 
     // MOBILE VERSION COMPATIBLE
@@ -27,11 +26,8 @@ const menu = {
    
 
 export default function Index() {
-    const router = usePathname();
     const [isActive, setIsActive] = useState(false);
-    useEffect(() => {
-        setIsActive(false)
-      }, [router.events]);
+ 
     return (
         <div className={styles.header}>
             <motion.div 
