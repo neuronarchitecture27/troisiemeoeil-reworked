@@ -1,6 +1,7 @@
 'use client';
-import {   useState } from 'react'
+import {   useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import Button from './Button';
 import styles from './style.module.scss';
 import Nav from './Nav';
@@ -26,8 +27,12 @@ const menu = {
    
 
 export default function Index() {
+    const pathname = usePathname();
     const [isActive, setIsActive] = useState(false);
- 
+    useEffect(() => {
+        console.log(`Route changed to: ${pathname}`);
+        setIsActive(false)
+      }, [pathname]);
     return (
         <div className={styles.header}>
             <motion.div 

@@ -10,8 +10,6 @@ import SlidingImages from '../components/Home/SlidingImages';
 import Contact from '../components/Home/Contact';
 import IntroProjects from '../components/Home/IntroProjects';
 import Services from '../components/Services';
-
-import LogoAnimation from '@/components/LogoAnimation';
 import "./globals.css"
 import ServiceSection from '@/components/Home/ServiceSection';
 export default function Work() {
