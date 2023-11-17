@@ -2,7 +2,7 @@
 import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
-import Transition from "../../components/Transition"
+import Transition from "../../../components/Transition"
 import Contact from '@/components/Home/Contact';
 import ProjectHeader from './components/ProjectHeader';
 import PrjDescription from './components/PrjDescription';
