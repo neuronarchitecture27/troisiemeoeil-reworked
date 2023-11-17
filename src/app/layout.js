@@ -1,8 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '../components/Header';
-import Heading from '../components/Heading';
-
+// import Header from '../components/Header';
+import { lazy } from "react";
+//inside my components/i have an index.js file 
+export const Header = lazy(()=> import('../components/Header'));
 
 import { Suspense } from 'react';
 
@@ -17,12 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense>
 
         <Header />
         {/* <Heading /> */}
         {children}
-        </Suspense>
       </body>
     </html>
   )
