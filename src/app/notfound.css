@@ -58,30 +58,3 @@
     border-radius: 300px;
     border: 2px solid #b68c60;
 }
-.home-btn{
-    position: absolute;
-    bottom: 100px;
-    right: 100px;
-
-}
-.home-btn button{
-    /* padding: 115px 65px; */
-    width: 10em;
-    height: 10em;
-    border-radius: 50%;
-    font-size: 20px;
-    font-family: NewYork;
-    border: none;
-    cursor: pointer;
-    color: white;
-    background-color: #b68c60;
-    transition: transform .6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-.home-btn button:hover{
-    transform: scale(1.2);
-}
-
-.link {
-    color: white;
-    text-decoration: none;
-}

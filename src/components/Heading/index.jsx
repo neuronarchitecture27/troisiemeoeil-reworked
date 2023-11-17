@@ -36,6 +36,7 @@ export default function Index() {
     return (
         <div className={styles.header}>
             <motion.div 
+            id='menu'
                 className={styles.menu}
                 variants={menu}
                 animate={isActive ? "open" : "closed"}
