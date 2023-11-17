@@ -4,10 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import Button from './Button';
 import styles from './style.module.scss';
-// import Nav from './Nav';
-import { lazy } from "react";
-//inside my components/i have an index.js file 
-export const Nav = lazy(()=> import('./Nav'));
+import Nav from './Nav';
 const menu = {
 
     // MOBILE VERSION COMPATIBLE
