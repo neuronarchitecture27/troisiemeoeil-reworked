@@ -1,15 +1,16 @@
-'use client';
+
+import axios from "axios"
 import styles from './style.module.scss';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import {  useRef } from 'react';
 import RoundedButton from "./RoundedButton" 
 
 
-export default function Index({projects, reversed}) {
+export default function Index({projects, reversed, posts}) {
 
-    const firstImage = useRef(null);
-    const secondImage = useRef(null);
-    let requestAnimationFrameId = null;
+    const firstImage = useRef();
+    const secondImage = useRef();
+    let requestAnimationFrameId;
     let xPercent = reversed ? 100 : 0;
     let currentXPercent = reversed ? 100 : 0;
     const speed = 0.15;
@@ -99,3 +100,16 @@ export default function Index({projects, reversed}) {
       </div>
     )
   }
+
+
+
+export async function getServerSideProps() {
+    const res = await axios.get("http://localhost:1337/api/projects")
+
+    console.log(res);
+    return {
+        props: {
+          posts: res
+        }
+      }
+    }
