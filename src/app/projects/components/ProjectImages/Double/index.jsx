@@ -2,114 +2,60 @@
 import axios from "axios"
 import styles from './style.module.scss';
 import Image from 'next/image';
-import {  useRef } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 import RoundedButton from "./RoundedButton" 
+import useSWR from 'swr';
+import supabase from '@/config/supabaseClient';
 
 
-export default function Index({projects, reversed, posts}) {
+// const fetcher = (url) => axios.get(url).then((res) => res.data);
+export default function Index() {
+ const [project, setProject] = useState(null)
 
-    const firstImage = useRef();
-    const secondImage = useRef();
-    let requestAnimationFrameId;
-    let xPercent = reversed ? 100 : 0;
-    let currentXPercent = reversed ? 100 : 0;
-    const speed = 0.15;
-    
-    const manageMouseMove = (e) => { 
-      if (window.innerWidth > 1000 ) {
-        const { clientX } = e;
-        xPercent = (clientX / window.innerWidth) * 100;
-        
-        if(!requestAnimationFrameId){
-            requestAnimationFrameId = window.requestAnimationFrame(animate);
-        }
-      }
+ 
+  useEffect(()=> {
+    const getData = async () => {
+      let { data: projects, error } = await supabase
+      .from('projects')
+      .select()
+      setProject(projects);
+  
     }
+    getData()
 
-    const animate = () => {
-        //Add easing to the animation
-        const xPercentDelta = xPercent - currentXPercent;
-        currentXPercent = currentXPercent + (xPercentDelta * speed)
-        
-        //Change width of images between 33.33% and 66.66% based on cursor
-        const firstImagePercent = 66.66 - (currentXPercent * 0.33);
-        const secondImagePercent = 33.33 + (currentXPercent * 0.33);
-        firstImage.current.style.width = `${firstImagePercent}%`
-        secondImage.current.style.width = `${secondImagePercent}%`
-        
-        if(Math.round(xPercent) == Math.round(currentXPercent)){
-            window.cancelAnimationFrame(requestAnimationFrameId);
-            requestAnimationFrameId = null;
-        }
-        else{
-            window.requestAnimationFrame(animate)
-        }
-    }
+  },[])
 
     return(
-      <div onMouseMove={(e) => {manageMouseMove(e)}} className={styles.double}>
-        <div ref={firstImage} className={styles.imageContainer}>
-          <div className={styles.stretchyWrapper}>
-            <Image 
-            className={styles.image}
-              src={`/images/${projects[0].src}`}
-              layout='fill'
-
-              alt={"image"}
-            />
-            
-            <div className={styles.rounded}>
-            <RoundedButton>
-                    <p className={styles.viewCase}>Read the Study Case</p>
-                  </RoundedButton>
-
-                      </div>
-          </div>
-          <div className={styles.body}>
-              <h3>{projects[0].name}</h3>
-              <p>{projects[0].description}</p>
-              <p>{projects[0].year}</p>
-              
-            
-          </div>
-        </div>
-  
-        <div ref={secondImage} className={styles.imageContainer}>
-          <div className={styles.stretchyWrapper}>
-            <Image 
-              className={styles.image}
-              src={`/images/${projects[1].src}`}
-              layout='fill'
-              alt={"image"}
-            />
-                        
-            <div className={styles.rounded}>
-                  <RoundedButton>
-                    <p className={styles.viewCase}>Read the Study Case</p>
-                  </RoundedButton>
-              </div>  
-          </div>
-          <div className={styles.body}>
-              <h3>{projects[1].name}</h3>
-              <p>{projects[1].description}</p>
-              <p>{projects[1].year}</p>
-          </div>
-          
-        </div>
-  
+      <div className={styles.container}>
+           { project && 
+           project.map((item,i) => (
+                       <div  className={styles.double} key={i}>
+      
+                       <div className={styles.imageContainer}>
+                         <div className={styles.stretchyWrapper}>
+                           <img 
+                           className={styles.image}
+                             src={`${item.img_url}`}
+                             alt={"image"}
+                           />
+                           
+                           <div className={styles.rounded}>
+                           <RoundedButton>
+                                   <p className={styles.viewCase}>Read the Study Case</p>
+                                 </RoundedButton>
+               
+                                     </div>
+                         </div>   
+                         <div className={styles.body}>
+                             <h3>{item.project_title}</h3>
+                             <p>{item.project_desc}</p>
+                             <p>{item.project_date}</p>
+                         </div>
+                       </div>
+                     </div>
+                    ))}
       </div>
+     
     )
   }
 
-
-
-export async function getServerSideProps() {
-    const res = await axios.get("http://localhost:1337/api/projects")
-
-    console.log(res);
-    return {
-        props: {
-          posts: res
-        }
-      }
-    }

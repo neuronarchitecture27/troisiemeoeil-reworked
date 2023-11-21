@@ -1,5 +1,4 @@
 
-
 export const projects = [
     {
         name: "Google Pixel Creator Labs",

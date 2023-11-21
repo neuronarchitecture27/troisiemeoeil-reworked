@@ -4,7 +4,6 @@ import { lazy } from "react";
 //inside my components/i have an index.js file 
 export const Header = lazy(()=> import('../components/Header'));
 
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -15,8 +15,10 @@
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.427",
     "@studio-freight/lenis": "^1.0.19",
+    "@supabase/supabase-js": "^2.38.5",
     "@typeform/embed-react": "^3.0.0",
     "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "framer-motion": "^10.13.0",
@@ -28,6 +30,7 @@
     "react-anime": "^4.1.1",
     "react-dom": "18.2.0",
     "sass": "^1.64.0",
+    "swr": "^2.2.4",
     "three": "^0.155.0",
     "zustand": "^4.4.1"
   }
