@@ -6,7 +6,9 @@ import Contact from '../../components/Home/Contact';
 import Transition from "../../components/Transition"
 import RevealText from "./components/RevealText"
 import ProjectImages from "./components/ProjectImages"
-export default function Work() {
+
+
+export default function Index() {
 
   const [isLoading, setIsLoading] = useState(true);
 

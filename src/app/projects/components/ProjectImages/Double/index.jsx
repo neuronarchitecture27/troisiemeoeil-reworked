@@ -1,15 +1,11 @@
 
-import axios from "axios"
 import styles from './style.module.scss';
-import Image from 'next/image';
-import {  useEffect, useRef, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import RoundedButton from "./RoundedButton" 
-import useSWR from 'swr';
 import supabase from '@/config/supabaseClient';
 import Link from "next/link";
 
 
-// const fetcher = (url) => axios.get(url).then((res) => res.data);
 export default function Index() {
  const [project, setProject] = useState(null)
 
@@ -61,7 +57,6 @@ export default function Index() {
                          </div>
                        </div>
                      </div>
-
                     ))}
       </div>
      

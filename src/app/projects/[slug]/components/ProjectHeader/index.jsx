@@ -1,11 +1,33 @@
-'use client'
-import React, { useEffect } from 'react'
 
+import  { useEffect, useState } from 'react'
+import getSlug from '../../../../utils/getSlug';
+import supabase from '@/config/supabaseClient';
 import anime from "animejs";
 import "./index.css"
 
 function ProjectHeader() {
+  const id =  getSlug();
+  const [projectData, setprojectData] = useState(null);
 
+
+useEffect(()=> {
+
+    const getSlugDetails = async () => {
+      const { data: slugDetails, error: err } = await supabase
+      .from('projects')
+      .select()
+      .match({
+        slug: id.slug
+      })
+      setprojectData(slugDetails)
+      return slugDetails
+    }
+    getSlugDetails()
+    console.log(projectData);
+
+  
+
+},[])
   const TextRevealWithFade = () => {
     const decors = document.querySelectorAll(".container");
 
@@ -31,7 +53,7 @@ function ProjectHeader() {
   return (
     <div className='container' id='text-box'>
       <p id='my-text'>Software Agency Portfolio Website</p>
-        
+      {/* {projectData[0].project_title} */}
     </div>
   )
 }

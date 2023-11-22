@@ -7,14 +7,17 @@ import Contact from '@/components/Home/Contact';
 import ProjectHeader from './components/ProjectHeader';
 import PrjDescription from './components/PrjDescription';
 import PrjImages from './components/PrjImages';
+import getSlug from '../../utils/getSlug';
+import supabase from '@/config/supabaseClient';
 
 
 
-export default function Work() {
-
+export default  function Work() {
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect( () => {
+ 
     (
       async () => {
           const LocomotiveScroll = (await import('locomotive-scroll')).default
@@ -27,7 +30,10 @@ export default function Work() {
           }, 20)
       }
     )()
+ 
+  
   }, [])
+
 
   return (
     <main className={styles.main}>
@@ -43,3 +49,4 @@ export default function Work() {
     </main>
   )
 }
+
