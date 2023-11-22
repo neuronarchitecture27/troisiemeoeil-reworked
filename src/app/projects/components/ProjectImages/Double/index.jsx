@@ -6,6 +6,7 @@ import {  useEffect, useRef, useState } from 'react';
 import RoundedButton from "./RoundedButton" 
 import useSWR from 'swr';
 import supabase from '@/config/supabaseClient';
+import Link from "next/link";
 
 
 // const fetcher = (url) => axios.get(url).then((res) => res.data);
@@ -19,7 +20,6 @@ export default function Index() {
       .from('projects')
       .select()
       setProject(projects);
-  
     }
     getData()
 
@@ -29,6 +29,7 @@ export default function Index() {
       <div className={styles.container}>
            { project && 
            project.map((item,i) => (
+         
                        <div  className={styles.double} key={i}>
       
                        <div className={styles.imageContainer}>
@@ -40,9 +41,16 @@ export default function Index() {
                            />
                            
                            <div className={styles.rounded}>
+                            <Link
+                            className={styles.link}
+                              href={{
+                                pathname: `/projects/${item.slug}`,
+                              }}
+                            >
                            <RoundedButton>
-                                   <p className={styles.viewCase}>Read the Study Case</p>
+                                   <p className={styles.viewCase}>Read More</p>
                                  </RoundedButton>
+                            </Link>
                
                                      </div>
                          </div>   
@@ -53,6 +61,7 @@ export default function Index() {
                          </div>
                        </div>
                      </div>
+
                     ))}
       </div>
      

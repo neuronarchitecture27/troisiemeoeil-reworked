@@ -13,8 +13,7 @@ export default function index() {
                 return (
                     <div key={`b_${i}`} className={styles.linkContainer}>
                         <Link  href={href}>
-                        <motion.div
-                         
+                        <motion.div 
                           custom={i}
                           variants={perspective}
                           initial="initial"
@@ -22,10 +21,10 @@ export default function index() {
                           exit="exit"
                         >
 
-                            <a>
+                            <div>
                                 {title}
-                            </a>
-                        </motion.div>
+                            </div>
+                        </motion.div >
                         </Link>
                     </div>
                 )

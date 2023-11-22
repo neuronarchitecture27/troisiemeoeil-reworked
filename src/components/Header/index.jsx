@@ -54,19 +54,21 @@ export default function Index() {
                 
                 <Magnetic>
                     <div className={styles.el}>
-                        <a><Link className={styles.link} href="/projects">Projects</Link></a>
+                        <Link className={styles.link} href="/projects">
+                            <div>Projects</div>
+                            </Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Blog</a>
+                        <div>Blog</div>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Contact</a>
+                        <div>Contact</div>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
@@ -74,7 +76,7 @@ export default function Index() {
                 <PopupButton id="j4p5sUNU" className={styles.popup}>
                 <div className={styles.beClient}>
                 <Rounded>
-                <a>Become a client!</a>
+                <p>Become a client!</p>
                 </Rounded>
                 </div>
                  </PopupButton>

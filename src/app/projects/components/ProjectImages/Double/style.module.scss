@@ -12,7 +12,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
   // gap: 1vw;
-  
+  .linkMobile{
+    display: none;
+
+    @include md {
+      display: block;
+      color: transparent;
+      text-decoration: none;
+
+  }}
   .double{
     margin-bottom: 2em;
     @include md {
@@ -43,10 +51,16 @@
          
         }
         .rounded {
+          
           position: absolute;
               @include md {
                 display: none;
                 bottom: 30%;
+            }
+            .link{
+              color: rgba(245, 245, 220, 0.842);
+              text-decoration: none;
+            
             }
         }
         .viewCase {
