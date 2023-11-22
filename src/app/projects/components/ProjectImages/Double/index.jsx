@@ -21,6 +21,8 @@ export default function Index() {
 
   },[])
 
+
+  
     return(
       <div className={styles.container}>
            { project && 
@@ -52,7 +54,7 @@ export default function Index() {
                          </div>   
                          <div className={styles.body}>
                              <h3>{item.project_title}</h3>
-                             <p>{item.project_desc}</p>
+                             <p className={styles.project_desc}>{item.project_desc}</p>
                              <p>{item.project_date}</p>
                          </div>
                        </div>

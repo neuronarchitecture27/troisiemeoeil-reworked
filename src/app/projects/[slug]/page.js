@@ -14,8 +14,28 @@ import supabase from '@/config/supabaseClient';
 
 export default  function Work() {
   const [isLoading, setIsLoading] = useState(true);
+  const id =  getSlug();
+  const [projectData, setprojectData] = useState(null);
 
 
+  useEffect(() => {
+    const  getSlugDetails = async () => {
+      const { data: slugDetails, error: err } = await supabase
+      .from('projects')
+      .select()
+      .match({
+        slug: id.slug
+      })
+      return slugDetails
+    }
+    getSlugDetails().then((result)=> {
+      setprojectData(result)
+    })
+   
+  }, []);
+  if (projectData) {
+    console.log(projectData);
+  }
   useEffect( () => {
  
     (
@@ -40,13 +60,15 @@ export default  function Work() {
       <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
        </AnimatePresence>
+    {projectData &&  
        <div className={styles.parralex}>
-      <ProjectHeader />
-      <PrjDescription />
+       <ProjectHeader header={projectData[0].project_title} />
+       <PrjDescription description={projectData[0].project_desc} tags={projectData[0].tags.list}/>
        </div>
+      }  
       <PrjImages />
       <Contact />
-    </main>
+      </main>
   )
 }
 

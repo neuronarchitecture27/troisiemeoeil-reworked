@@ -82,7 +82,12 @@
         font-weight: 400;
       }
 
+      
+
       p{
+        text-align: justify;
+        max-width: 30rem; /* Set the maximum width */
+    word-wrap: break-word; /* Allow long words to break and wrap */
         font-family: 'Lato', sans-serif;
         font-size: 1em;
         margin: 0px;

@@ -2,7 +2,9 @@
 import styles from './page.module.css'
 import { useRef, useEffect } from 'react';
 
-export default function Home() {
+export default function Home({description, tags}) {
+
+
 
   const path = useRef(null);
   let progress = 0;
@@ -70,17 +72,19 @@ export default function Home() {
 
             <div className={styles.description}>
               <p>Smart Development</p>
-              <p className={styles.descText}>Combining unique design and rich technology, we build digital products exactly as they were designed, without shortcuts or simplifications.</p>
+              <p className={styles.descText}>{description}</p>
             </div>
             <div className={styles.tagsContainer}>
               <p>Areas</p>
               <div className={styles.tags}>
-                <p>E-commerce</p>
-                <p>Finance</p>
-                <p>Education</p>
-                <p>Social</p>
-                <p>Entertainment</p>
-                <p>Medicine</p>
+                {
+                  tags &&
+                  tags.map((item, i)=> (
+                    <p key={i}>{item}</p>
+
+                  ))
+                }
+              
               </div>
             </div>
 
