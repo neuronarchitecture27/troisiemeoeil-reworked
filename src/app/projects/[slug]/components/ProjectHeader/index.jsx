@@ -10,24 +10,6 @@ function ProjectHeader() {
   const [projectData, setprojectData] = useState(null);
 
 
-useEffect(()=> {
-
-    const getSlugDetails = async () => {
-      const { data: slugDetails, error: err } = await supabase
-      .from('projects')
-      .select()
-      .match({
-        slug: id.slug
-      })
-      setprojectData(slugDetails)
-      return slugDetails
-    }
-    getSlugDetails()
-    console.log(projectData);
-
-  
-
-},[])
   const TextRevealWithFade = () => {
     const decors = document.querySelectorAll(".container");
 
@@ -46,14 +28,34 @@ useEffect(()=> {
       
     xc.play();
   };
+  let dataArr = []
   useEffect(() => {
+    const  getSlugDetails = async () => {
+      const { data: slugDetails, error: err } = await supabase
+      .from('projects')
+      .select()
+      .match({
+        slug: id.slug
+      })
+      return slugDetails
+    }
+    getSlugDetails().then((result)=> {
+      setprojectData(result)
+    })
     TextRevealWithFade();
   }, []);
 
   return (
     <div className='container' id='text-box'>
-      <p id='my-text'>Software Agency Portfolio Website</p>
-      {/* {projectData[0].project_title} */}
+      <p id='my-text'> 
+      {projectData && projectData[0].project_title} 
+      {/* {projectData && 
+      projectData.map((item,i) => (
+        {item} 
+      ))
+      } */}
+      </p>
+    
     </div>
   )
 }
