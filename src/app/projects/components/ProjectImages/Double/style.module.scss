@@ -12,18 +12,20 @@
   flex-wrap: wrap;
   justify-content: space-around;
   // gap: 1vw;
+
   .linkMobile{
     display: none;
-
     @include md {
       display: block;
       color: transparent;
       text-decoration: none;
-
   }}
+
   .double{
-    margin-bottom: 2em;
+    max-width: 40%;
+    margin-bottom: 6rem;
     @include md {
+      max-width: 100%;
       flex-direction: column;
     height: fit-content;
   }
