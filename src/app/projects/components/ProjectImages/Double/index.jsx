@@ -52,7 +52,6 @@ export default function Index() {
                
                                      </div>
                          </div>   
-                         qsdfqsfq
                          <div className={styles.body}>
                              <h3>{item.project_title}</h3>
                              <p className={styles.project_desc}>{item.project_desc}</p>
