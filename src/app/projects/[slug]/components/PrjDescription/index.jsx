@@ -80,7 +80,7 @@ export default function Home({description, tags}) {
                 {
                   tags &&
                   tags.map((item, i)=> (
-                    <p key={i}>{item}</p>
+                    <p key={i}>{item.name}</p>
 
                   ))
                 }

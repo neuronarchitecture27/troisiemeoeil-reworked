@@ -63,7 +63,7 @@ export default  function Work() {
     {projectData &&  
        <div className={styles.parralex}>
        <ProjectHeader header={projectData[0].project_title} />
-       <PrjDescription description={projectData[0].project_desc} tags={projectData[0].tags.list}/>
+       <PrjDescription description={projectData[0].project_desc} tags={projectData[0].tags}/>
        </div>
       }  
       <PrjImages />
