@@ -64,7 +64,11 @@ export default function Home({description, tags}) {
     <div className={styles.container}>
         <div className={styles.body}>
             <div className={styles.line}>
-              <div onMouseEnter={() => {manageMouseEnter()}} onMouseMove={(e) => {manageMouseMove(e)}} onMouseLeave={() => {manageMouseLeave()}} className={styles.box}></div>
+              <div 
+               onMouseEnter={() => {manageMouseEnter()}} 
+               onMouseMove={(e) => {manageMouseMove(e)}}
+               onMouseLeave={() => {manageMouseLeave()}} 
+               className={styles.box}></div>
               <svg>
                 <path ref={path}></path>
               </svg>

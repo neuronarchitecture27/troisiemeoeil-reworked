@@ -1,11 +1,199 @@
 @import '/breakpoints';
 
 .wrapper {
-    width: auto;
-    height: 100%;
+    // height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: stretch;
     background-color: black;
+    margin: 0em 1.5em 60em 1.5em;
+    padding: 0em 10em 1em 10em;
+    border-radius: 1em;
+    position: sticky;
+    top: 0;
+    overflow: visible;
+            @include md {
+        display: block;
+        position: static;
+        margin: 0;
+        padding: 0;
+            }
+    .navBar {
+        flex-shrink: 1;
+        display: block;
+        width: 14%;
+        height: 100vh;
+        min-width: 13em;
+        object-fit: fill;
+        position: sticky;
+        top: 0;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        background-color: black;
+        border-radius: 1em;
+        @include md {
+           display: none;
+        }
+        .naverbarInner {
+            display: block;
+            padding: 1em;
+            width: auto;
+            height: 100%;
+            overflow: visible;
+            object-fit: fill;
+            position: static;
+            @include md {
+                display:flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: center;
+                overflow: hidden;
+                    }
+            .navBarLinksWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: start;
+                row-gap: 0.5em;
+                flex-wrap: nowrap;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                position: relative;
+                @include md {
+                    height: auto;
+                    position: relative;
+                    margin: 0vw 6vw 6vw 6vw;
+                  flex-shrink: 1;
+                        }
+                .navBarLinkBlock{
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    align-items: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    // padding: 0.5em 1em 0.5em 1em;
+                    width: 100%;
+                    min-height: 6em;
+                    overflow: visible;
+                    position: relative;
+                    z-index: 1;
+                    font-size: 0.87em;
+                    text-align: left;
+                    color: white;
+                    &:nth-child(1){
+                        background-color: #ff3D03;
+                        border-radius: 1em;
+                    }
+                    &:nth-child(2){
+                        background-color: #5b00cd;
+                        border-radius: 1em;
+                    }
+                    &:nth-child(3){
+                        background-color: black;
+                        border-radius: 1em;
+                    }
+                    &:nth-child(4){
+                        background-color: #2d33fa;
+                        border-radius: 1em;
+                    }
+                    &:nth-child(5){
+                        background-color: #ff053d;
+                        border-radius: 1em;
+                    }
+                    &:nth-child(6){
+                        background-color: #bcd891;
+                        border-radius: 1em;
+                    }
+                    .textWrapper {
+                     min-width: 85%;
+                     padding: 1em;
+                    }
+                }
+                .navBarLinkIndicatorWrapper{
+                    flex-shrink: 1;
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    top: 1em;
+                    bottom: 1em;
+                    right: 1em;
+                    .navBarLinkDot{
+                        display: block;
+                        width: 0.4em;
+                        height: 0.4em;
+                        overflow: visible;
+                        position: static;
+                        background-color: linen;
+                        border-radius: 999em;
+                        mix-blend-mode: normal;
+                    }
+                }
+            }
+
+        }
+    }
+    .mainWrapper {
+        flex-grow: 1;
+        order: 0;
+        display: block;
+        padding: 1em;
+        position: sticky;
+        top: 0px;
+        overflow: visible;
+        clear: none;
+        @include md {
+        position: static;
+        }
+        .sectionWrapper {
+            display: block;
+            padding: 8em 0 8em 0;
+            margin-bottom: 1.5em;
+            width: auto;
+            height: auto;
+            position: static;
+            border-radius: 1em;
+            background-color: black;
+            @include md {
+                padding: 8em 1em 8em 1em;
+                }
+            .paddingGlobal{
+                display: block;
+                padding: 0 15em 0 15em;
+                font-size: large;
+                width: auto;
+                height: auto;
+                position: static;
+                overflow: visible;
+                text-align: center;
+                @include md {
+                    padding: 0;
+                        }
+                h2{
+                    font-size: 3.2em;
+                    color: white;
+                    @include md {
+                    font-size: 1.6em;
+
+                            }
+                }
+                p{
+                    font-size: 1.2em;
+                    color: white;
+                    @include md {
+                    font-size: 0.8em;
+
+                            }
+
+                }
+            }
+        }
+    }
     .img{
         position: relative;
         height: 100%;

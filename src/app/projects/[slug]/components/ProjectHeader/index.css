@@ -22,8 +22,8 @@
         .container {
             height: 70vh;
         }
-            #my-text {
-                font-size: 16vw;
-                padding-left: 10px;
-            }
+         #my-text {
+            font-size: 14vw;
+            padding-left: 20px;
+        }
     }
