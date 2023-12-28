@@ -16,6 +16,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      
       <div className={styles.body}>
 
         <div className={styles.introLine}>

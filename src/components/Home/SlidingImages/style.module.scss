@@ -9,7 +9,10 @@
     padding-top: 200px;
     background-color: black;
     z-index: 1;
- 
+    @include md {
+        padding-top: 0px;
+        margin: 0em 0 10em 0;
+        }
     .slider{
         display: flex;
         position: relative;

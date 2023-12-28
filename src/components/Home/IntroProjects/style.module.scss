@@ -7,6 +7,10 @@
     align-items: center;
     justify-content: center;
     background-color: black;
+    @include md {
+      padding-top: 0vh;
+
+      }
   }
   .container .grid{
     display: flex;

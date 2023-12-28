@@ -1,24 +1,30 @@
 
 body{
-    margin: 0px;
-    overflow: hidden; /* Hide scrollbars */
-    
+    margin: 0 !important;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     height: auto;
+    background-color: black;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+  .LogoAnimation {
+    width: auto;
+    height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {
     html,body {
-        overflow: scroll;
         width: 100%;
+        overflow-x: hidden;
     }
+
     .mobile {
         display: none;
     }
 }
 
 
-.LogoAnimation {
-    width: auto;
-    height: 100vh;
-}
 
