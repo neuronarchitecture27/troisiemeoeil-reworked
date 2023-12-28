@@ -12,7 +12,6 @@
     display: flex;
     height: 100%;
     width: 100%;
-    overflow: hidden;
     position: absolute;
   }
   
@@ -28,15 +27,16 @@
     mix-blend-mode: difference;
     color: white;
    
+    @include md {
+        font-size: 12vw;
   }
-  @include md {
-    .container .body {
-      font-size: 12vw;
-    }
-}
-  
+  }
+
   .grid .column{
     width: 5vw;
+    @include md {
+      display: none;
+}
   }
   
   .column div{

@@ -233,11 +233,11 @@ nav ul{
 }
 
 @media only screen and (max-width: 600px) {
-    .circle__container {
-        /* width: 90vw; */
 
+    .circle__container {
     overflow: hidden;
     }
+
 
     .header {
         border: 0;

@@ -123,13 +123,15 @@
                     top: 1em;
                     bottom: 1em;
                     right: 1em;
+
                     .navBarLinkDot{
                         display: block;
                         width: 0.4em;
                         height: 0.4em;
                         overflow: visible;
-                        position: static;
-                        background-color: linen;
+                        position: absolute;
+                    background-color: blue;
+                        z-index: 10000;
                         border-radius: 999em;
                         mix-blend-mode: normal;
                     }
@@ -145,7 +147,7 @@
         padding: 1em;
         position: sticky;
         top: 0px;
-        overflow: visible;
+        overflow-y: auto;
         clear: none;
         @include md {
         position: static;
@@ -169,7 +171,7 @@
                 width: auto;
                 height: auto;
                 position: static;
-                overflow: visible;
+                overflow: auto;
                 text-align: center;
                 @include md {
                     padding: 0;

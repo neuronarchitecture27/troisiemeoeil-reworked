@@ -40,11 +40,16 @@ export default function Work() {
     <Landing />
     </div>
     <Description />
+    <IntroProjects description="We specialize in turning space into complexe shapes." />
     <Services />
-    <IntroProjects />
+    <IntroProjects description="Don't take our word for it. Our clients can vouch for us." />
     <Projects />
+    <IntroProjects description="We also take our values seriously." />
     <ServiceSection />
+    <IntroProjects description="Scalable and performent tech is our go-to tools." />  
     <SlidingImages />
+    <IntroProjects description="Get in touch." />  
+
     <Contact />
     </main>
     )

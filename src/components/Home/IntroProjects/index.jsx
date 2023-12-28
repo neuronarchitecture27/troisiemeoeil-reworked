@@ -2,7 +2,7 @@
 import styles from './style.module.scss'
 import { useState, useEffect } from 'react';
 
-export default function Home() {
+export default function Home({description}) {
 
   const [windowsWidth, setWindowsWidth] = useState(0);
 
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <p className='movingDesc'>We specialize in turning space into complexe shapes</p>
+        <p className='movingDesc'>{description}</p>
       </div>
       <div className={styles.grid}>
         {

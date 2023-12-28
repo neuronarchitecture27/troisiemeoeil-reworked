@@ -1,11 +1,35 @@
 import Image from "next/image"
 import styles from "./style.module.scss"
+import { useEffect } from "react"
 
 
 function PrjImages() {
+useEffect(()=> {
+  const container = document.getElementById('container')
+
+    const wrapper = document.getElementById('wrapper')
+    const wrapperDot = document.getElementById('wrapperDot')
+  function updateProgress() {
+    wrapper.style.top = `${getScrollPerc()}%`
+    wrapperDot.innerText = `${getScrollPerc()}`
+    requestAnimationFrame(updateProgress)
+
+  }
+  function getScrollPerc() {
+    // console.log((container.scrollY) / (container.scrollHeight) * 100);
+    return ((container.scrollTop) / (container.scrollHeight) * 100)
+  }
+  updateProgress()
+    wrapper.addEventListener('scroll', function(event) {
+      // Your code here
+      console.log('Scrolling in the div!');
+  });
+})
+
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.navBar}>
+    <div className={styles.wrapper} id="container">
+      <div className={styles.navBar} >
         <div className={styles.naverbarInner}>
           <div className={styles.navBarLinksWrapper}>
             <div className={styles.navBarLinkBlock}>
@@ -68,14 +92,14 @@ function PrjImages() {
                   </p>
               </div>
             </div>
-            <div className={styles.navBarLinkIndicatorWrapper}>
-                <div className={styles.navBarLinkDot}></div>
+            <div className={styles.navBarLinkIndicatorWrapper} id="wrapper" >
+                <div className={styles.navBarLinkDot} id="wrapperDot" ></div>
             </div>
           </div>
         </div>
 
       </div>
-      <div className={styles.mainWrapper}>
+      <div className={styles.mainWrapper} >
         <div className={styles.sectionWrapper}>
           <div className={styles.paddingGlobal}>
             <h2>
