@@ -30,6 +30,7 @@
     "react-anime": "^4.1.1",
     "react-dom": "18.2.0",
     "sass": "^1.64.0",
+    "split-type": "^0.2.1",
     "swr": "^2.2.4",
     "three": "^0.155.0",
     "zustand": "^4.4.1"

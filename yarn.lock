@@ -3014,6 +3014,11 @@ split-string@^3.0.1:
   dependencies:
     extend-shallow "^3.0.0"
 
+split-type@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/split-type/-/split-type-0.2.1.tgz"
+  integrity sha512-bKv6qaTbFo3Kdq9Yubcx69WRi0hrhwIxP3fquzhqDWXy8JQ65nveM3Z8sQnCFQle6Dj6QLynHKVImBFiPkUozw==
+
 stats-gl@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/stats-gl/-/stats-gl-1.0.4.tgz"

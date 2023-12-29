@@ -15,7 +15,7 @@ export default function Index() {
     return (
         <div ref={description} className={styles.description}>
             <div className={styles.body}>
-                <p className='DescriptionHead'>
+                <motion.p className='DescriptionHead'>
                 {
                     phrase.split(" ").map( (word, index) => {
                         return <span key={index} 
@@ -23,14 +23,14 @@ export default function Index() {
                             <motion.span variants={slideUp} 
                             custom={index} 
                             animate={isInView ? "open" : "closed"} 
-                            key={index}>{word}</motion.span></span>
+                            key={index}>{word}</motion.span>
+                            </span>
                     })
                 }
-                </p>
+                </motion.p>
                 <motion.p variants={opacity}
                  animate={isInView ? "open" : "closed"}  
                  className='Headline'>
-                The combination of my passion for design, code & interaction positions me in a unique place in the web design world.
                 </motion.p>
                 <PopupButton id="j4p5sUNU" className={styles.popup}>
                 <div data-scroll data-scroll-speed={0.1}>

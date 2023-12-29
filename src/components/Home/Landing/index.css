@@ -1,0 +1,83 @@
+.containerWrapp {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    top: 10%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mainheadline {
+    padding-top: 5%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+
+.descheadline {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    gap: 15px;
+    width: 50%;
+    margin-top: 2em;
+}
+
+.border {
+    width: 100%;
+    border: 0.5px solid rgba(59, 59, 59, 0.589);
+}
+
+.headingWrapp {
+    width: 50%;
+    color: white;
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    white-space: normal;
+    gap: 0.5em;
+}
+
+.descText {
+    color: white;
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    margin: 0;
+    word-wrap: break-word;
+    white-space: normal;
+    width: 40%;
+}
+
+.descText2 {
+    color: white;
+    font-size: 1.1vw;
+    text-transform: uppercase;
+    margin: 0;
+    word-wrap: break-word;
+    white-space: normal;
+   width: 60%;
+}
+
+.textsection {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+
+.secondaryheadline {
+    width: 100%;
+    color: white;
+    font-size: 8.5em;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: wrap;
+    display: flex;
+    gap: 0.5em;
+}

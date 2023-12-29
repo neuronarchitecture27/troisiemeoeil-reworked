@@ -44,7 +44,7 @@ export default function Work() {
     <Services />
     <IntroProjects description="Don't take our word for it. Our clients can vouch for us." />
     <Projects />
-    <IntroProjects description="Our work is aligned with sacred values." />
+    <IntroProjects description="Our values must always be aligned." />
     <ServiceSection />
     <IntroProjects description="Reliable tech choices is in our startegy." />  
     <SlidingImages />
