@@ -21,12 +21,12 @@ export default function Home() {
         transition={{ type: "tween", ease: "backOut", duration:0.5}}
       >
           <p className='paragraph' onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
-            A visual designer - with skills that havent been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
+            A company - with skills that havent been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
           </p>
       </motion.div>
 
       <div className={styles.body}>
-        <p className='paragraph'>Im a <span>selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
+        <p className='paragraph'>At Troisieme Oeil, we excel in selectively skilled engineering, prioritizing the creation of impactful digital experiences.</p>
       </div>
 
     </main>
