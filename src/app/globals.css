@@ -5,6 +5,8 @@ body{
     scrollbar-width: none;  /* Firefox */
     height: auto;
     background-color: black;
+    overflow-x: hidden;
+
 }
 body::-webkit-scrollbar {
     display: none;

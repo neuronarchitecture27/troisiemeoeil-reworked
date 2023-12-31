@@ -32,6 +32,7 @@ export default function Work() {
     </AnimatePresence>
     <HoverDescription />  
     <ImageSlider />
+    <div className={styles.seperator}></div>
     <Contact />
   </main>
   )

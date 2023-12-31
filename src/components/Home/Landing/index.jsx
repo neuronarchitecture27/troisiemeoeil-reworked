@@ -7,6 +7,7 @@ import SplitType from 'split-type'
 
 export default function Home() {
   const tl = gsap.timeline()
+  
 
 
   return (
