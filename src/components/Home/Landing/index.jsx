@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import "../../globals.css"
 import Sphere from '@/components/Sphere';
 import './index.css'
-import SplitType from 'split-type'
 
 export default function Home() {
   const tl = gsap.timeline()

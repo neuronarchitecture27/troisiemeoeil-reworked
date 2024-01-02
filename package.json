@@ -9,11 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.80.6",
-    "@react-three/fiber": "^8.13.7",
-    "@react-three/postprocessing": "^2.15.1",
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.427",
     "@studio-freight/lenis": "^1.0.19",
     "@supabase/supabase-js": "^2.38.5",
     "@typeform/embed-react": "^3.0.0",
@@ -21,18 +16,15 @@
     "dotenv": "^16.3.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
-    "framer-motion": "^10.13.0",
+    "framer-motion": "^10.16.16",
     "gsap": "^3.12.2",
-    "lamina": "^1.1.23",
     "locomotive-scroll": "^5.0.0-beta.8",
     "next": "13.4.10",
     "react": "18.2.0",
     "react-anime": "^4.1.1",
     "react-dom": "18.2.0",
-    "sass": "^1.64.0",
-    "split-type": "^0.2.1",
+    "sass": "^1.69.6",
     "swr": "^2.2.4",
-    "three": "^0.155.0",
     "zustand": "^4.4.1"
   }
 }
