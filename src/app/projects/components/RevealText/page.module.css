@@ -35,23 +35,6 @@
     opacity: 0.2;
 }
 
-.stagger-visualizer {
-
-    display: flex;
-    /*flex-wrap: wrap;*/
-    justify-content: center;
-    align-items: center;
-    width: 450px;
-    height: 450px;
-  }
-  
-  .stagger-visualizer div {
-    /*position: absolute;*/
-    width: 64px;
-    height: 128px;
-    border: 2px solid #ffffff;
-    background-color: #ffffff;
-  }
 
 @media only screen and (max-width: 600px) {
     /* .main {

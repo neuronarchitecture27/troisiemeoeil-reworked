@@ -12,6 +12,7 @@ import Heading from '../../components/Heading';
 
 import Link from 'next/link';
 import { PopupButton, Sidetab } from '@typeform/embed-react';
+import Image from 'next/image';
 
 export default function Index() {
     const header = useRef(null);
@@ -44,12 +45,23 @@ export default function Index() {
                <Link href="/" className={styles.link}>
                <div className={styles.name}>
                     <p className={styles.codeBy}>Code by</p>
-                    <p className={styles.ahmed}>Ahmed</p>
-                    <p className={styles.boulakhras}>Boulakhras</p>
+                    <p className={styles.ahmed}>👁️</p>
+                    <p className={styles.boulakhras}>TROISIEME OEIL</p>
                 </div>
                </Link>
             </div>
-         
+            <div className="logoImage">
+                <a href="/">
+
+                <Image
+                          src="/images/troisiemeoeillogo.png"
+                          width={100}
+                          height={100}
+                          alt='troisieme oeil company logo'
+                          />
+            </a>
+            
+            </div>
             <div className={styles.nav}>
                 
                 <Magnetic>
@@ -66,6 +78,7 @@ export default function Index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
+            
                 <Magnetic>
                     <div className={styles.el}>
                         <div>Contact</div>

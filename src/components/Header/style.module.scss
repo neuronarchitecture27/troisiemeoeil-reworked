@@ -23,6 +23,8 @@
     .logo{
         display: flex;
         cursor: pointer;
+        width: 20%; 
+        height: auto;
         @include md {
             display: none;
           }
@@ -39,7 +41,7 @@
             position: relative;
             overflow: hidden;
             white-space: nowrap;
-            margin-left: 8px;
+            margin-left: 15px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
             p{
                 position: relative;
@@ -67,10 +69,10 @@
                     transform: translateX(-100%);
                 }
                 .ahmed{
-                    transform: translateX(-60px);
+                    transform: translateX(-100PX);
                 }
                 .boulakhras{
-                    transform: translateX(-70px);
+                    transform: translateX(-130px);
                 }
             }
         }
