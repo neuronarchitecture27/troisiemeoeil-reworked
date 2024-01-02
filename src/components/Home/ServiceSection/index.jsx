@@ -101,32 +101,19 @@ animate()
         <div className={`${"circleInfo_container"}`}>
           
             <div className="info">
-            TECH THAT’S LIGHT AS AIR
-            <p className='info_desc'>
-            Our multidisciplinary team transforms big, innovative ideas into powerful, accessible interactive experiences that ignite emotions and provoke action.
-By combining creativity, technical expertise, and a deep understanding of users behaviour, we create compelling immersive experiences that are flawless to use.
-            </p>
+            TECH THAT’S  <br /> LIGHT AS AIR
+         
             </div>
             <div className="info">
-            STAND ABOVE THE NOISE
-            <p className='info_desc'>
-            With meticulous attention to detail, we shape every face of the brand experience. From developing a strategic foundation to crafting compelling visual elements.
-Our expertise lies in seamlessly translating these elements into a cohesive and memorable brand identity that resonates with the target audience and delivering deep engagement with your brand.
-            </p>
+            STAND ABOVE <br /> THE NOISE
+         
             </div>
             <div className="info">
             DESIGN-POWERED <br /> PRODUCT GROWTH
-            <p className='info_desc'>
-            Our design agency partners with startups and tech companies, leveraging its expertise in design to fuel their growth.
-We deliver interactive design solutions, increasing user engagement opportunities, and streamlining workflows through intuitive design systems.
-            </p>
+         
             </div>
             <div className="info">
-            BESPOKE SOLUTIONS
-            <p className='info_desc'>
-            Our design process is tailored to effectively achieve client goals. We prioritize establishing strong relationships and understanding business objectives for every project.
-Through seamless communication and collaboration between our team of experts and steakholders, we deliver exceptional design solutions to tell unique stories.
-            </p>
+            CREATIVE <br /> SOLUTIONS
             </div>
         </div>
     </div>

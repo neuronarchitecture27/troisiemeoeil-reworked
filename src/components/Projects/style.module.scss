@@ -1,13 +1,17 @@
 @import '/breakpoints';
 
 .projects{
+    position: relative;
     display: flex;
     align-items: center;
     padding-left: 200px;
     padding-right: 200px;
     flex-direction: column;
-    padding-top: 300px;
+    margin-top: 300px;
+    margin-top: 300px;
+
     background-color: black;
+    z-index: 10;
     @include sm {
         padding-left: 0px;
         padding-right: 0px;

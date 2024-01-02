@@ -4,11 +4,13 @@
   
     }
 .main{
+    position: relative;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
+    z-index: 10;
 }
 
 .body{
