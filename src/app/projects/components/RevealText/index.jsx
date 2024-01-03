@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import "./global.css"
 import AnimationBorder from '../AnimationBorder';
-const phrase = "The magic of design and the wizardry of technology are embraced, with brands crafted that are not only dazzling and performing brilliantly but also possessing the power to grow beyond imagination.";
+const phrase = "Witness the magic of design and the wizardry of technology united, with brands that are not only dazzling and performing brilliantly but also possessing the power to grow beyond limits.";
 
 export default function Home() {
 

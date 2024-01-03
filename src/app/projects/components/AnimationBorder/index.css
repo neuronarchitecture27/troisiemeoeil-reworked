@@ -22,6 +22,8 @@
 
 @media only screen and (max-width: 600px) {
 .container {
-    display: none;
+    width: 100vw;
+    overflow-x: hidden;
+    /* display: none; */
 }
 }
