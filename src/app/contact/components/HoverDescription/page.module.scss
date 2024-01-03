@@ -3,8 +3,13 @@
 @font-face {
     font-family: NewYork;
     src: url("/fonts/NewYork.otf");
-  
     }
+
+    @font-face {
+      font-family: Lato;
+      src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+      
+      }
 
 .main{
     height: 100vh;
@@ -25,11 +30,15 @@
             line-height: 40px;
               padding:0px;
             }
+            .paragraph {
+              font-family: Lato;
+
+            }
           
       p{
         width: 90%;
         font-family: NewYork;
-        font-size: 60%;
+        font-size: 0.8em;
         padding:40px;
         @include md {
         padding:0px;
@@ -45,7 +54,7 @@
       mask-image: url('../../../../../public/mask.svg');
       mask-repeat: no-repeat;
       mask-size: 40px;
-      background: #ec4e39;
+      background: #F8E6CB;
       position: absolute;
       color: black;
       @include md {

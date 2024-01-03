@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { slideUp, opacity } from './animation';
 import Rounded from '../../../common/RoundedButton';
 import { PopupButton } from '@typeform/embed-react';
+import Link from 'next/link';
 
 import "../../globals.css"
 
@@ -32,13 +33,12 @@ export default function Index() {
                  animate={isInView ? "open" : "closed"}  
                  className='Headline'>
                 </motion.p>
-                <PopupButton id="j4p5sUNU" className={styles.popup}>
-                <div data-scroll data-scroll-speed={0.1}>
+                <Link className={styles.link} href="/contact">
                     <Rounded className={styles.button}>
-                        <p className='Headline'>Start Here!</p>
+                        <p className={styles.headline}>Start Here!</p>
                     </Rounded>
-                </div>
-                </PopupButton>
+                        </Link>
+              
             </div>
         </div>
     )
