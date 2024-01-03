@@ -50,13 +50,12 @@ export default function Index() {
                 </div>
                </Link>
             </div>
-            <div className="logoImage">
+            <div className={styles.logoImage}>
                 <a href="/">
 
                 <Image
                           src="/images/troisiemeoeillogo.png"
-                          width={100}
-                          height={100}
+                       fill={true}
                           alt='troisieme oeil company logo'
                           />
             </a>
