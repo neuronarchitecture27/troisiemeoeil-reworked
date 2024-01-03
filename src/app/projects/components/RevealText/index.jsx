@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import "./global.css"
+import AnimationBorder from '../AnimationBorder';
 const phrase = "The magic of design and the wizardry of technology are embraced, with brands crafted that are not only dazzling and performing brilliantly but also possessing the power to grow beyond imagination.";
 
 export default function Home() {
@@ -51,7 +52,7 @@ export default function Home() {
 
   return (
     <div ref={container} className={styles.main}>
- 
+      <AnimationBorder />
  
       <div ref={body} className={styles.body}>
         {

@@ -1,0 +1,27 @@
+.container {
+    position: absolute;
+    top: 20%;
+}
+
+.stagger-visualizer {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 450px;
+}
+
+.stagger-visualizer div {
+  /*position: absolute;*/
+  width: 64px;
+  height: 128px;
+  border: 1px solid #fefefe;
+  background-color: #ffffffc2;
+}
+
+@media only screen and (max-width: 600px) {
+.container {
+    display: none;
+}
+}
