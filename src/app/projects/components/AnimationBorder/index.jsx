@@ -3,6 +3,7 @@ import './index.css'
 import Anime, { anime } from 'react-anime';
 
 export default function AnimationBorder() {
+  
     useEffect(()=> {
         const staggerVisualizerEl = document.querySelector('.stagger-visualizer');
         const fragment = document.createDocumentFragment();
