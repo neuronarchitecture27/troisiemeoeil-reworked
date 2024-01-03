@@ -47,11 +47,14 @@ export default function Home() {
         <TextDipserse setBackground={setBackground}>
           <p>→Insta</p>
         </TextDipserse>
+
        </div>
+      <div className="divider"></div>
         {/* <div className={styles.introline}> All rights are reserved - Troisieme Oeil Digital 2023</div> */}
 
       </div>
-      <div ref={background} className={styles.background}></div>
+      <div ref={background} className={styles.background}>
+      </div>
       
     </main>
     

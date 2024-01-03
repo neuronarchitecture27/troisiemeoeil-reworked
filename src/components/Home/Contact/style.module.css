@@ -22,6 +22,7 @@
     text-transform: uppercase;
     color: white;
     font-family: NewYork;
+    
 }
 
 .introLine{
@@ -66,4 +67,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.divider {
+    width: 100%;
+    height: 10vh;
 }
