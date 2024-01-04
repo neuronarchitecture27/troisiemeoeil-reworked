@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Resend } from 'resend';
 import './index.css'
 import Rounded from '../../../../common/RoundedButton'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { NextResponse } from "next/server";
 
 
@@ -24,7 +24,9 @@ export default function Form() {
       };
 
       const handleSubmit = async (e) => {
+          toast.success('Email Successfully Sent!')
         e.preventDefault()
+
         const formDataJSON = JSON.stringify(formData);
         console.log(formDataJSON);
         const request = await fetch('api/send', {
@@ -37,12 +39,12 @@ export default function Form() {
 
         const data = await request.json()
         console.log(data);
+
         return NextResponse.json(data)
         //  if (request.status === 200) {
         //     setFormData({});
         //     console.log(request);
         //     console.log("all good");
-        //     toast.success('Email Successfully Sent!')
 
         // }
         // return NextResponse.json({ message: "This Worked", success: true });
