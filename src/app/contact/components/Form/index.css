@@ -5,6 +5,9 @@
     border: 1px solid white;
     border-radius: 30px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .headerForm {
@@ -80,7 +83,9 @@ input {
 }
 
 .button {
-    width: 10px;
+    position: relative;
+    left: 50%;
+    width: 50%;
     height: 50px;
     border-radius: 50%;
 }
