@@ -6,6 +6,7 @@ import Contact from '../../components/Home/Contact';
 import Transition from "../../components/Transition"
 import ImageSlider from "./components/ImageSlider"
 import HoverDescription from "./components/HoverDescription"
+import Form from './components/Form';
 export default function Work() {
 
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Work() {
       {isLoading && <Transition />}
     </AnimatePresence>
     <HoverDescription />  
+    <Form />
     <ImageSlider />
     <div className={styles.seperator}></div>
     <Contact />
