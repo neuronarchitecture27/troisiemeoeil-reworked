@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { EmailTemplate } from '../../../components/Emailtemplate';
+import { EmailTemplate } from '../../../components/EmailTemplate';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
@@ -15,7 +15,7 @@ export async function POST(request) {
       from: 'Troisieme Oeil Digital <work@troisiemeoeil.io>',
       to: email,
       subject: `Hello ${firstname}`,
-      react: EmailTemplate({ firstname: `${firstname}`, secondname: `${secondname}` }),
+      react: EmailTemplate({ firstname: firstname, secondname: secondname }),
     });
     if (data.status === 'success') {
       return NextResponse.json({message: 'Email Successfully sent!'})
