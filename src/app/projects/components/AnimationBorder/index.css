@@ -1,4 +1,4 @@
-.container {
+.containerAnimation {
     position: absolute;
     top: 20%;
 }
@@ -21,7 +21,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-.container {
+.containerAnimation {
     display: none;
 }
 }

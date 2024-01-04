@@ -36,6 +36,8 @@ export default function Work() {
     <ImageSlider />
     <div className={styles.seperator}></div>
     <Contact />
+    <div className={styles.seperator}></div>
+
   </main>
   )
 }

@@ -13,8 +13,8 @@
     box-sizing: border-box;
     align-items: center;
     @include md {
-        width: 100%;
-        justify-content: center;
+    width: 100%;
+    justify-content: center;
     align-items: center;
     font-size: 1em;
     gap: 15%;

@@ -35,6 +35,7 @@ export default function Index() {
     <RevealText />
     <ProjectImages />
     <Contact />
+    <div className={styles.seperator}></div>
   </main>
   )
 }

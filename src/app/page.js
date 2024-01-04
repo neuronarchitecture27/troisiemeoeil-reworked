@@ -55,7 +55,10 @@ export default function Work() {
     />  
     <SlidingImages />
     <IntroProjects firstsentence="We would love to hear from you!" />  
+    
     <Contact />
+    <div className={styles.seperator}></div>
+
     </main>
     )
 }

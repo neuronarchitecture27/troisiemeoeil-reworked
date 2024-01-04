@@ -111,3 +111,22 @@
 form {
     width: 45%;
 }
+
+
+@media only screen and (max-width: 600px) {
+ .sentenceone, .sentencetwo {
+    font-size: 11vw;
+ }
+
+ .formWrapper {
+    flex-direction: column;
+    height: auto;
+ }
+
+ .companyinfo {
+    width: 100%;
+ }
+ form {
+    width: 100%;
+ }
+}
