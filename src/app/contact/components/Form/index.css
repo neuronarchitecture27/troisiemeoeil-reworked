@@ -54,7 +54,7 @@
 }
 
 .form {
-    width: 52%;
+    width: 100%;
     height: auto;
     padding-top: 2em;
     display: flex;
@@ -62,7 +62,8 @@
     gap: 1em;
 }
 
-input {
+.submit {
+    z-index: 9999;
     color: black;
     font-weight: 600;
     text-transform: uppercase;
@@ -70,7 +71,17 @@ input {
     border: 1px solid white;
     border-radius: 30px;
 }
-
+#email {
+        z-index: 9999;
+        color: black;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 2em;
+        border: 1px solid white;
+        border-radius: 30px;
+        height: 50px;
+    
+}
 
 .identity {
     width: 100%;
@@ -81,16 +92,22 @@ input {
 
 #firstname, #secondname {
     width: 45%;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2em;
+    border: 1px solid white;
+    border-radius: 30px;
 }
 
-#email {
-    height: 30%;
-}
+
 
 .button {
     position: relative;
-    left: 50%;
-    width: 50%;
+    width: 100%;
     height: 50px;
-    border-radius: 50%;
+}
+
+form {
+    width: 55%;
 }

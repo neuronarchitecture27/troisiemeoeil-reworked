@@ -4,6 +4,11 @@ const nextConfig = {
     images: {
         domains: ['localhost'],
       },
+      experimental: {
+        serverComponentsExternalPackages: [
+            'resend', "@react-email"
+        ]
+    }
 }
 
 module.exports = nextConfig

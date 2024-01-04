@@ -2,22 +2,54 @@ import React, { useState } from 'react'
 import { Resend } from 'resend';
 import './index.css'
 import Rounded from '../../../../common/RoundedButton'
+import toast, { Toaster } from 'react-hot-toast';
+import { NextResponse } from "next/server";
 
-// const resend = new Resend('re_Rygjzscp_Ay5zxvHgtyjs1J6WmuSrepFx');
-
-// resend.emails.send({
-//     from: 'troisiemeoeilagency@gmail.com',
-//     to: email,
-//     subject: 'Hello World',
-//     html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
-//   });
 
 export default function Form() {
-    const [firstname, setFirstname] = useState("");
-    const [secondname, setSecondname] = useState("");
-    const [email, setEmail] = useState("");
+    const [formData, setFormData] = useState({
+        firstname: '',
+        secondname: '',
+        email: '',
+        // Add other form fields here
+      });
 
-console.log(firstname);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault()
+        const formDataJSON = JSON.stringify(formData);
+        console.log(formDataJSON);
+        const request = await fetch('api/send', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: formDataJSON,
+        })
+
+        const data = await request.json()
+        console.log(data);
+        return NextResponse.json(data)
+        //  if (request.status === 200) {
+        //     setFormData({});
+        //     console.log(request);
+        //     console.log("all good");
+        //     toast.success('Email Successfully Sent!')
+
+        // }
+        // return NextResponse.json({ message: "This Worked", success: true });
+       
+      };
+    
+
 
   return (
     <div className="wrapper">
@@ -40,20 +72,35 @@ console.log(firstname);
                 <br />
                 say hi: work@troisiemeoeil.io
             </div>
+            <form onSubmit={handleSubmit}>
             <div className="form">
                 <div className="identity">
-                <input type="text" name="first name" id="firstname" onChange={(e) => setFirstname(e.target.value)} placeholder='first name' />
-                <input type="text" name="second name" id="secondname" onChange={(e) => setSecondname(e.target.value)}  placeholder='second name' />
+                <input type="text"
+                 name="firstname" 
+                 id="firstname"
+                 value={formData.firstname || ''}
+                 onChange={handleInputChange}
+                 placeholder='first name' />
+                <input type="text"
+                name="secondname" 
+                id="secondname" 
+                value={formData.secondname || ''}
+                onChange={handleInputChange}
+                placeholder='second name' />
                 </div>
              
-                <input type="email" name="email" onChange={(e) => setEmail(e.target.value)}  id="email" placeholder='email' />
-                <div className="button">
-                    <Rounded >
-                        <p>Start Here!</p>
-                    </Rounded>
+                <input type="email" 
+                name="email" 
+                value={formData.email || ''}
+                onChange={handleInputChange}
+                id="email" 
+                placeholder='email' />
+                 
+                <input className="submit" type="submit"  />
+                  
+          
             </div>
-            </div>
-         
+            </form>
         </div>
     </div>
     </div>
