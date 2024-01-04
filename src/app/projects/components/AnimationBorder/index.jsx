@@ -101,7 +101,6 @@ export default function AnimationBorder() {
     })
   return (
     <div className="containerAnimation">
-
         <div className="stagger-visualizer"></div>
     </div>
   )
