@@ -20,6 +20,7 @@ export default function Form() {
 console.log(firstname);
 
   return (
+    <div className="wrapper">
     <div className='container'>
         <div className='headerForm'>
             <div className="sentenceone">
@@ -55,5 +56,7 @@ console.log(firstname);
          
         </div>
     </div>
+    </div>
+
   )
 }
