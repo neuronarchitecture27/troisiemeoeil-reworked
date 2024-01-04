@@ -12,7 +12,7 @@ export async function POST(request) {
     console.log(body);
     const {firstname, secondname, email} = body;
     const data = await resend.emails.send({
-      from: 'work@troisiemeoeil.io',
+      from: 'Troisieme Oeil Digital <work@troisiemeoeil.io>',
       to: email,
       subject: `Hello ${firstname}`,
       react: EmailTemplate({ firstname: `${firstname}`, secondname: `${secondname}` }),
