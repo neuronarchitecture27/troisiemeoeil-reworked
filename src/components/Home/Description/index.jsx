@@ -5,7 +5,6 @@ import { slideUp, opacity } from './animation';
 import Rounded from '../../../common/RoundedButton';
 import { PopupButton } from '@typeform/embed-react';
 import Link from 'next/link';
-
 import "../../globals.css"
 
 export default function Index() {
