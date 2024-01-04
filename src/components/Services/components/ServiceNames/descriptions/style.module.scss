@@ -7,11 +7,11 @@
     width: 100%;
     z-index: 2;
     pointer-events: none;  
-     @include md {
-        display: none
-    }
+    //  @include md {
+    //     display: none
+    // }
     .description{
-        background-color: #ff0101;
+        background-color:#f8e6cb;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -32,11 +32,19 @@
                 margin: 0px;
                 position: relative;
                 z-index: 1;
+                     @include md {
+                        display: none
+                    }
             }
             &:nth-of-type(2){
                 width: 40%;
                 font-size: 1vw;
                 font-weight: 700;
+                     @include md {
+                width: 80%;
+                font-size: 3vw;
+
+                    }
             }
         }
     }

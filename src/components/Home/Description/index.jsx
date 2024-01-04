@@ -3,7 +3,6 @@ import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { slideUp, opacity } from './animation';
 import Rounded from '../../../common/RoundedButton';
-import { PopupButton } from '@typeform/embed-react';
 import Link from 'next/link';
 import "../../globals.css"
 

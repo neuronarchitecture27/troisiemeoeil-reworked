@@ -16,7 +16,7 @@ export default function index({data, setSelectedProject}) {
 
 function Title({data, setSelectedProject}) {
 
-    const { title, speed, i } = data;
+    const { title, description, speed, i } = data;
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -36,6 +36,7 @@ function Title({data, setSelectedProject}) {
             >
                 <motion.p style={{clipPath: clip}}>
                     {title}
+                 
                 </motion.p>
                 <p>
                     {title}

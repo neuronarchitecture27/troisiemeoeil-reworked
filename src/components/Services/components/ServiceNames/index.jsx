@@ -6,33 +6,33 @@ import Descriptions from './descriptions';
 
 const data = [
     {
-        title: "App Dev",
-        description: "Working on the Next-Generation Technologies. Be it on the Web, Mobile or Desktop",
-        speed: 0.5
+        title: "Software Dev",
+        description: "Working on the Next-Generation Technologies. Be it on the Web, Mobile or Desktop.",
+        speed: 0.6
     },
     {
-        title: "UI/UX Desing",
-        description: "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
-        speed: 0.5
+        title: "Headless CMS Dev",
+        description: "We will take care of your CMS based website. Webflow, Shopify and WP won't lock you down anymore.",
+        speed: 0.7
     },
     {
-        title: "ECommerce",
-        description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
+        title: "E-Commerce Dev",
+        description: "Your brand will look extra with our custom tailed E-commerce software solutions. Prepare for your sales to start rocking off.",
         speed: 0.67
     },
     {
-        title: "Server Setup",
-        description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+        title: "3D Experience Dev",
+        description: "Engage your visitors with interactive experiences using the latest technologies of 3D, AR and VR!",
         speed: 0.8
     },
     {
         title: "Maintenance",
-        description: "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
+        description: "We stay by your side in your journey and make sure no interruptions will occur.",
         speed: 0.8
     },
     {
         title: "IT Consulting",
-        description: "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+        description: "Curious about scalability? tech stack? server setup? We got the answers for all your questions.",
         speed: 0.8
     }
 ]
@@ -42,6 +42,7 @@ export default function ServiceNames() {
     return (
         <div className={styles.container}>
             <Titles data={data} setSelectedProject={setSelectedProject}/>
+            
             <Descriptions data={data} selectedProject={selectedProject}/>
         </div>
     )
