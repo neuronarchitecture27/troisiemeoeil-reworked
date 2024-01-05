@@ -64,7 +64,7 @@
 
 .submit {
     z-index: 2;
-    color: black;
+    color: white;
     font-weight: 600;
     text-transform: uppercase;
     padding: 2em;
@@ -80,19 +80,19 @@
         padding: 2em;
         border: 1px solid white;
         border-radius: 30px;
-        height: 50px;
+        height: 10em;
     
 }
 
 .identity {
     width: 100%;
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
 }
 
 
 #firstname, #secondname {
-    width: 45%;
+    width: 49%;
     color: black;
     font-weight: 600;
     text-transform: uppercase;
