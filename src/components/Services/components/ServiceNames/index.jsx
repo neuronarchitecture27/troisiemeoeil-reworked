@@ -32,7 +32,7 @@ const data = [
     },
     {
         title: "IT Consulting",
-        description: "Curious about scalability? tech stack? server setup? We got the answers for all your questions.",
+        description: "Curious about scalability? tech stack? server setup? We got it all covered.",
         speed: 0.8
     }
 ]
