@@ -78,11 +78,7 @@ animate()
 
   return (
     <section  className={`${"section" }`} onClick={()=> {setAligned(!aligned)}}>
-    <div className="header">
-        <div className="header__container">
-            
-        </div>
-    </div>
+  
 
     <div className="circle__container">
         
