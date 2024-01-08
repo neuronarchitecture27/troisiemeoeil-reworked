@@ -35,8 +35,6 @@ export default function Work() {
     <Form />
     <ImageSlider />
     <div className={styles.seperator}></div>
-    <Contact />
-    <div className={styles.seperator}></div>
 
   </main>
   )

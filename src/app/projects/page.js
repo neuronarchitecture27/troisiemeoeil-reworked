@@ -34,7 +34,6 @@ export default function Index() {
     </AnimatePresence>
     <RevealText />
     <ProjectImages />
-    <Contact />
     <div className={styles.seperator}></div>
   </main>
   )

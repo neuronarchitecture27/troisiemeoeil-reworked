@@ -67,7 +67,6 @@ export default  function Work() {
        </div>
       }  
       <PrjImages />
-      <Contact />
       </main>
   )
 }

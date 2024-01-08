@@ -42,6 +42,7 @@ export default function Work() {
     <Description />
     <IntroProjects firstsentence="We turn empty space " secondsentence='into complexe shapes.' />
     <Services />
+
     <IntroProjects firstsentence="Don't take our word for it."  
     secondsentence='Our clients can vouch for us.'
     />
@@ -56,8 +57,6 @@ export default function Work() {
     <SlidingImages />
     <IntroProjects firstsentence="We would love to hear from you!" />  
     
-    <Contact />
-    <div className={styles.seperator}></div>
 
     </main>
     )

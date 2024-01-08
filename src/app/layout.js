@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google'
 import { lazy } from "react";
 //inside my components/i have an index.js file 
 export const Header = lazy(()=> import('../components/Header'));
+export const Contact = lazy(()=> import('../components/Home/Contact'));
+
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,6 +22,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/images/favicon.ico" sizes="any" />
         <Header />
         {children}
+        <Contact />
       </body>
     </html>
   )

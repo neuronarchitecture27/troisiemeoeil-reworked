@@ -2,16 +2,16 @@
 
 
 .main{
-    height: 60vw;
+    height: 80vw;
     background-color: black;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     @include md {
         height: 100vw;
+        padding: 0 ;
+        margin: 7em 0 7em 0;
     }
     img{
         height: 100%;

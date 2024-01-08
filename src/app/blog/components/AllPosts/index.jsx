@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Postdiv from './RestPost/Postdiv'
 
+import Rounded from '../../../../common/RoundedButton'
+
 export default function AllPosts() {
   return (
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
@@ -63,8 +65,16 @@ export default function AllPosts() {
           {[...Array(5)].map((_, i, post) => (
            
               <Postdiv key={i} {...post} />
+              
             ))}
+
+
             </div>
+         <div >
+         <Rounded>
+                <p className=' p-8'> Read All Posts</p>
+                </Rounded>
+         </div>
     </div>
   )
 }

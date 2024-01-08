@@ -35,8 +35,6 @@ export default function Index() {
     <div className={styles.divider}></div>
 
     <AllPosts />
-    <Contact />
-    <div className={styles.seperator}></div>
   </main>
   )
 }
