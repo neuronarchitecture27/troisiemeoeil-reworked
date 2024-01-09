@@ -18,12 +18,12 @@ export default function Home() {
     let headingWrapp = document.querySelector('.ml12')
     headingWrapp.innerHTML = headingWrapp.textContent.replace(
       /\S/g,
-      "<span className='letter'>$&</span>"
+      "<span id='letter'>$&</span>"
     )
-    gsap.timeline().from(".ml12 .letter", {
+    gsap.timeline().from("#letter", {
         opacity: 0,
         duration: 0.25,
-        delay: 1,
+        delay: 3,
         stagger: {
           amount: 0.5,
           grid:"auto",
@@ -92,7 +92,7 @@ export default function Home() {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="150px" height="150px" ><path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" style={{fill:"#ffffff"}}/></svg>
           </div>
           <div className='headingWrapp'>
-             <h1 className="ml12"> cutting edge technology.</h1>
+             <h1 className="ml12" id="sentences"> cutting edge technology.</h1>
               
               <div className={styles.line}>
               <div 

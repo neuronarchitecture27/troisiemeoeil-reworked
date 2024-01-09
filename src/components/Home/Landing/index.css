@@ -31,6 +31,10 @@
     border: 0.5px solid rgba(59, 59, 59, 0.589);
 }
 
+.letter {
+    opacity: 1;
+}
+
 .headingWrapp {
     width: 50%;
     color: white;
