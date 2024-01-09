@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Postdiv from './RestPost/Postdiv'
 
-import Rounded from '../../../../common/RoundedButton'
+import Rounded from '@/common/RoundedButton'
 
 export default function AllPosts() {
   return (
