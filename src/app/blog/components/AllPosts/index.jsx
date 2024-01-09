@@ -59,11 +59,11 @@ export default function AllPosts() {
 
 
             </div>
-         <div >
-         <Rounded>
+      <Link href="/blog/all">
+      <Rounded>
                 <p > Read All Posts</p>
                 </Rounded>
-         </div>
+                </Link>
     </div>
   )
 }

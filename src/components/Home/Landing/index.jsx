@@ -6,7 +6,6 @@ import { useEffect, useRef } from "react";
 import styles from './page.module.css'
 import gsap from "gsap";
 
-
 export default function Home() {
   const path = useRef(null);
   let progress = 0;

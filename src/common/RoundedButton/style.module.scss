@@ -1,3 +1,5 @@
+@import '/breakpoints';
+
 .roundedButton{
     border-radius: 3em;
     border: 1px solid rgb(255, 255, 255);
@@ -8,7 +10,10 @@
     justify-content: center;
     padding: 1em 1em;
     transform: translate(0px, 0px);
-
+    @include md {
+    padding: 1em 1em;
+        
+    }
     p{
         color: white;
         position: relative;

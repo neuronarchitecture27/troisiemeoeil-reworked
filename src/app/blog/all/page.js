@@ -30,7 +30,8 @@ export default function Index() {
     <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
     </AnimatePresence>
-   <div className='w-full h-auto flex flex-col items-center py-3 mt-[7em]'>
+    <div className=' h-[8em]'></div>
+   <div className=' w-full h-auto flex flex-col items-center py-3 '>
    {[...Array(10)].map((_, i, post) => (
            
            <div key={i} className=' w-auto h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>

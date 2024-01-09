@@ -1,13 +1,12 @@
 'use client';
 import styles from './page.module.scss'
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Preloader from '../components/Header/Preloader';
 import Landing from '../components/Home/Landing';
 import Projects from '../components/Projects';
 import Description from '../components/Home/Description';
 import SlidingImages from '../components/Home/SlidingImages';
-import Contact from '../components/Home/Contact';
 import IntroProjects from '../components/Home/IntroProjects';
 import Services from '../components/Services';
 import "./globals.css"

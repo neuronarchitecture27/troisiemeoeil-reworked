@@ -2,8 +2,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from './style.module.scss';
 import { usePathname } from 'next/navigation';
-import { AnimatePresence } from 'framer-motion';
-import Nav from './nav';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
@@ -11,14 +9,72 @@ import Magnetic from '../../common/Magnetic';
 import Heading from '../../components/Heading';
 
 import Link from 'next/link';
-import { PopupButton, Sidetab } from '@typeform/embed-react';
 import Image from 'next/image';
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
+import { Button } from "@/components/ui/button"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
 
+const data = [
+    {
+      goal: 400,
+    },
+    {
+      goal: 300,
+    },
+    {
+      goal: 200,
+    },
+    {
+      goal: 300,
+    },
+    {
+      goal: 200,
+    },
+    {
+      goal: 278,
+    },
+    {
+      goal: 189,
+    },
+    {
+      goal: 239,
+    },
+    {
+      goal: 300,
+    },
+    {
+      goal: 200,
+    },
+    {
+      goal: 278,
+    },
+    {
+      goal: 189,
+    },
+    {
+      goal: 349,
+    },
+  ]
 export default function Index() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
     const button = useRef(null);
+
+    const [goal, setGoal] = useState(350)
+ 
+    function onClick(adjustment) {
+      setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+    }
 
     useEffect( () => {
       if(isActive) setIsActive(false)
@@ -89,25 +145,66 @@ export default function Index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
-                <Link href='/contact'>
-                <div className={styles.beClient}>
-                <Rounded>
-                <p>Become a client!</p>
-                </Rounded>
-                </div>
-                </Link>
             
+                <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="outline">Get in touch 👋</Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <div className="mx-auto w-full max-w-sm">
+          <DrawerHeader>
+            <DrawerTitle>Move Goal</DrawerTitle>
+            <DrawerDescription>Set your daily activity goal.</DrawerDescription>
+          </DrawerHeader>
+          <div className="p-4 pb-0">
+            <div className="flex items-center justify-center space-x-2">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 shrink-0 rounded-full"
+                onClick={() => onClick(-10)}
+                disabled={goal <= 200}
+              >
+                <MinusIcon className="h-4 w-4" />
+                <span className="sr-only">Decrease</span>
+              </Button>
+              <div className="flex-1 text-center">
+                <div className="text-7xl font-bold tracking-tighter">
+                  {goal}
+                </div>
+                <div className="text-[0.70rem] uppercase text-muted-foreground">
+                  Calories/day
+                </div>
+              </div>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 shrink-0 rounded-full"
+                onClick={() => onClick(10)}
+                disabled={goal >= 400}
+              >
+                <PlusIcon className="h-4 w-4" />
+                <span className="sr-only">Increase</span>
+              </Button>
+            </div>
+            <div className="mt-3 h-[120px]">
+             <h1>Hello Mom</h1>
+            </div>
+          </div>
+          <DrawerFooter>
+            <Button>Submit</Button>
+            <DrawerClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </div>
+      </DrawerContent>
+                  </Drawer>
             </div>
         </div>
         <div ref={button} className={styles.headerButtonContainer}>
         <Heading />
-            {/* <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
-                <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
-            </Rounded> */}
         </div>
-        {/* <AnimatePresence mode="wait">
-            {isActive && <Heading />}
-        </AnimatePresence> */}
         </>
     )
 }

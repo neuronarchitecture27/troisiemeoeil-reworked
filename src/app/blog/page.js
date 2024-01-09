@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import styles from './page.module.scss'
 import { AnimatePresence } from 'framer-motion';
 import Transition from "../../components/Transition"
-import Contact from '../../components/Home/Contact';
 import AllPosts from './components/AllPosts';
 
 export default function Index() {
@@ -33,7 +32,7 @@ export default function Index() {
       {isLoading && <Transition />}
     </AnimatePresence>
     <div className={styles.divider}></div>
-
+    
     <AllPosts />
   </main>
   )
