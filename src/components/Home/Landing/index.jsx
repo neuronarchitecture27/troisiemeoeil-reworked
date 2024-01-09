@@ -22,7 +22,7 @@ export default function Home() {
     )
     gsap.timeline().from("#letter", {
         opacity: 0,
-        duration: 0.25,
+        duration: 0.5,
         delay: 3,
         stagger: {
           amount: 0.5,

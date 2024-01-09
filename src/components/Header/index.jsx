@@ -89,14 +89,13 @@ export default function Index() {
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
-                
-                <PopupButton id="j4p5sUNU" className={styles.popup}>
+                <Link href='/contact'>
                 <div className={styles.beClient}>
                 <Rounded>
                 <p>Become a client!</p>
                 </Rounded>
                 </div>
-                 </PopupButton>
+                </Link>
             
             </div>
         </div>

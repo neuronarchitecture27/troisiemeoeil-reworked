@@ -6,18 +6,7 @@ import Rounded from '../../../../common/RoundedButton'
 export default function AllPosts() {
   return (
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
-      {/* <div className="grid auto-rows-[192px] grid-cols-3 gap-4">
-  {[...Array(7)].map((_, i) => (
-    <div
-      key={i}
-      className={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 ${
-        i === 3 || i === 6 ? "col-span-2" : ""
-      }`}
-    >
-      <h1 className=" text-red-500">heyy</h1>
-    </div>
-  ))}
-</div> */}
+ 
    <div className=" w-4/5 grid lg:grid-cols-3 grid-cols-1 gap-6 px-3 mt-10">
             {[...Array(5)].map((_, i) => (
            
@@ -72,7 +61,7 @@ export default function AllPosts() {
             </div>
          <div >
          <Rounded>
-                <p className=' p-8'> Read All Posts</p>
+                <p > Read All Posts</p>
                 </Rounded>
          </div>
     </div>
