@@ -39,7 +39,9 @@ export default function Work() {
     <Landing />
     </div>
     <Description />
-    <IntroProjects firstsentence="We turn empty space " secondsentence='into complexe shapes.' />
+   <div className='md:pt-[15em]'>
+   <IntroProjects firstsentence="We turn empty space " secondsentence='into complexe shapes.' />
+   </div>
     <Services />
 
     <IntroProjects firstsentence="Don't take our word for it."  
