@@ -8,9 +8,7 @@
     padding-right: 150px;
     flex-direction: column;
     margin-top: 300px;
-
     background-color: black;
-    z-index: 10;
     @include sm {
         padding-left: 0px;
         padding-right: 0px;
@@ -18,8 +16,7 @@
     @include md {
         padding-left: 0px;
         padding-right: 0px;
-        // padding-top: 5%;
-    margin-top: 100px;
+        margin-top: 100px;
 
 
     }
