@@ -84,7 +84,7 @@ export default function SinglePost() {
       {isLoading && <Transition />}
     </AnimatePresence>
    <div className='w-full h-[100vh] flex flex-col items-center py-3 mt-[7em]'>
-    <div className='w-1/2'>
+    <div className='w-full p-4 md:w-1/2'>
 
     <div className='flex p-2 gap-1 mb-8'>
         <Link href="/">
@@ -108,8 +108,8 @@ export default function SinglePost() {
     style={{objectFit: "cover"}}
     />
     </div>
-    <h1 className="mb-2 text-6xl text-white">Glassmorphism with Tailwind CSS Under 60 seconds</h1>
-    <h3 className=' mb-2 text-[#f0f8ff]'>Quick guide on how to make glass morph components with Tailwind (updated for latest Tailwind version)</h3>
+    <h1 className="mb-2 text-5xl md:text-6xl text-white">Glassmorphism with Tailwind CSS Under 60 seconds</h1>
+    <h3 className=' mb-2 md:text-lg text-[#f0f8ff]'>Quick guide on how to make glass morph components with Tailwind (updated for latest Tailwind version)</h3>
     <div className="line">
               <div 
                onMouseEnter={() => {manageMouseEnter()}} 
