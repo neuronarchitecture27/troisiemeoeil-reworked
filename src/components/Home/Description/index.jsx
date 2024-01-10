@@ -1,6 +1,7 @@
+'use client'
 import styles from './style.module.scss';
 import { useInView, motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { slideUp, opacity } from './animation';
 import Rounded from '../../../common/RoundedButton';
 import Link from 'next/link';
@@ -65,11 +66,7 @@ export default function Index() {
     const description = useRef(null);
     const isInView = useInView(description)
 
-    const [goal, setGoal] = useState(350)
  
-    function onClick(adjustment) {
-      setGoal(Math.max(200, Math.min(400, goal + adjustment)))
-    }
 
     return (
         <div ref={description} className={styles.description}>
@@ -99,48 +96,22 @@ export default function Index() {
                     </Rounded>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm">
-          <DrawerHeader>
-            <DrawerTitle>Move Goal</DrawerTitle>
-            <DrawerDescription>Set your daily activity goal.</DrawerDescription>
-          </DrawerHeader>
-          <div className="p-4 pb-0">
+        <div className="mx-auto h-auto w-full max-w-sm ">
+     
+          <div className="p-4 pb-0 h-[70vh]">
             <div className="flex items-center justify-center space-x-2">
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 shrink-0 rounded-full"
-                onClick={() => onClick(-10)}
-                disabled={goal <= 200}
-              >
-                <MinusIcon className="h-4 w-4" />
-                <span className="sr-only">Decrease</span>
-              </Button>
-              <div className="flex-1 text-center">
-                <div className="text-7xl font-bold tracking-tighter">
-                  {goal}
-                </div>
-                <div className="text-[0.70rem] uppercase text-muted-foreground">
-                  Calories/day
-                </div>
-              </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 shrink-0 rounded-full"
-                onClick={() => onClick(10)}
-                disabled={goal >= 400}
-              >
-                <PlusIcon className="h-4 w-4" />
-                <span className="sr-only">Increase</span>
-              </Button>
+            <iframe
+            className='h-[70vh]'
+      src="https://calendly.com/troisiemeoeildigital/30min" // Replace this with the URL you want to embed
+      title="Calendly Meeting"
+      width="100%"
+      height="500px"
+      scrolling="no"
+    />
             </div>
-            <div className="mt-3 h-[120px]">
-             <h1>Hello Mom</h1>
-            </div>
+          
           </div>
           <DrawerFooter>
-            <Button>Submit</Button>
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>
