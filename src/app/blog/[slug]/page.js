@@ -83,7 +83,8 @@ export default function SinglePost() {
     <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
     </AnimatePresence>
-   <div className='w-full h-[100vh] flex flex-col items-center py-3 mt-[7em]'>
+    <div className='w-full h-[10vh]'></div>
+   <div className='w-full h-[100vh] flex flex-col items-center py-3 '>
     <div className='w-full p-4 md:w-1/2'>
 
     <div className='flex p-2 gap-1 mb-8'>

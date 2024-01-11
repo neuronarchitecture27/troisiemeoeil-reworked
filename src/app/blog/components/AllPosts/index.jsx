@@ -1,14 +1,29 @@
+'use client'
 import Link from 'next/link'
 import Postdiv from './RestPost/Postdiv'
-
+import supabase from '@/config/supabaseClient';
 import Rounded from '@/common/RoundedButton'
+import { useEffect, useState } from 'react';
 
 export default function AllPosts() {
+
+  const [posts, setposts] = useState(null)
+  useEffect(()=> {
+    const getData = async () => {
+      let { data: posts, error } = await supabase
+      .from('blogs')
+      .select()
+      setposts(posts);
+    console.log(posts);
+
+    }
+    getData()
+  },[])
   return (
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
  
    <div className=" w-4/5 grid lg:grid-cols-3 grid-cols-1 gap-6 px-3 mt-10">
-            {[...Array(5)].map((_, i) => (
+            {posts && posts.map((_, i) => (
            
                   <div
                     key={i}
@@ -20,31 +35,30 @@ export default function AllPosts() {
                     ${i === 4 && "h-72"}
                     `}
                   >
-                    <Link href='#'>
+                    <Link href={`blog/${posts[i].slug}`}>
                       <img
                         className="h-full  w-full object-cover"
-                        src='./images/maven.jpg'
+                        src={posts[i].blog_img_url}
                         alt=""
                       />
 
                       <p className="text-neutral-50 bottom-14 font-InterBold text-xl ml-2  absolute z-20 ">
-                        Atlas Communications
+                        {posts[i].title}
                       </p>
 
                       <div className="absolute bottom-3 z-20 flex justify-between items-center w-full px-2 font-InterMedium text-neutral-500 text-sm">
                         <div className="flex items-center gap-x-2">
                           <img
                             className="w-6 h-6 rounded-full object-cover"
-                            // src="images/img3.jpg"
-                            src='./images/troisiemeoeillogo.png'
-                            alt=""
+                            src={posts[i].author_img_url}
+                            alt={posts[i].author_name}
                           />
-                          <p>Troisieme Oeil</p>
+                          <p>  {posts[i].author_name}</p>
                         </div>
-                        <p>21/02/2021</p>
+                        <p> {posts[i].blog_date}</p>
                       </div>
                     </Link>
-                    <div className=" bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
+                    <div className="bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
                   </div>
                 )
             )}
@@ -53,7 +67,7 @@ export default function AllPosts() {
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
           {[...Array(5)].map((_, i, post) => (
            
-              <Postdiv key={i} {...post} />
+              <Postdiv key={i} title={"hello mom"} {...post} />
               
             ))}
 

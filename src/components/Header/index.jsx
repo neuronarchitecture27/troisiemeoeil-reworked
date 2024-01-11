@@ -69,9 +69,13 @@ export default function Index() {
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
     const button = useRef(null);
-
+    const [isMounted, setIsMounted] = useState(false);
     const [goal, setGoal] = useState(350)
- 
+    const iframeRef = useRef(null);
+function handleIframeLoad() {
+  setIsMounted(true);
+
+}
     function onClick(adjustment) {
       setGoal(Math.max(200, Math.min(400, goal + adjustment)))
     }
@@ -92,7 +96,8 @@ export default function Index() {
             }
         })
     }, [])
-
+ 
+  
     return (
         <>
         <div ref={header} className={styles.header}>
@@ -152,17 +157,23 @@ export default function Index() {
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto h-auto w-full flex flex-col items-center  ">
-     
+        {
+      isMounted ?  null :  <p className=' m-4 font-medium'>The Contact From is loading. ⏳</p> 
+    }
           <div className="p-4 pb-0 w-[100vw] h-[70vh]">
+            
             <div className="flex items-center justify-center space-x-2">
             <iframe
             className='h-[70vh]'
       src="https://calendly.com/troisiemeoeildigital/30min" // Replace this with the URL you want to embed
       title="Calendly Meeting"
       width="100%"
+      ref={iframeRef}
+      onLoad={handleIframeLoad}
+
       height="500px"
-      scrolling="no"
     />
+ 
             </div>
           
           </div>

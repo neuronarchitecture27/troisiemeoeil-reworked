@@ -1,7 +1,9 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 
-function Postdiv(post) {
+function Postdiv({title}) {
+
   return (
     <div>
       <Link
@@ -9,7 +11,7 @@ function Postdiv(post) {
         className="hover:bg-neutral-950 p-2 hover:rounded-2xl"
       >
         <h1 className="font-InterBold text-2xl  text-neutral-300 my-2">
-          The state of Javascript in 2024
+          {title}
         </h1>
         <div className="text-neutral-500 flex gap-x-3">
           <img
