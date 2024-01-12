@@ -13,24 +13,26 @@ export default function AllPosts() {
       let { data: posts, error } = await supabase
       .from('blogs')
       .select()
+      .order('created_at', { ascending: false })
       setposts(posts);
     console.log(posts);
 
     }
     getData()
   },[])
+
   return (
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
  
    <div className=" w-4/5 grid lg:grid-cols-3 grid-cols-1 gap-6 px-3 mt-10">
-            {posts && posts.map((_, i) => (
+            {posts && posts.slice(0, 2).map((_, i) => (
            
                   <div
                     key={i}
                     className={`rounded-xl border border-neutral-800 bg-neutral-900  relative  overflow-hidden
                     ${i === 0 && "md:row-span-2 row-start-1 "}
-                    ${i === 2 && "lg:h-80 h-64 "}
                     ${i === 1 && "lg:h-[280px] h-64 "}
+                    ${i === 2 && "lg:h-80 h-64 "}
                     ${i === 3 && "lg:h-[330px] h-64 lg:-mt-9 "}
                     ${i === 4 && "h-72"}
                     `}
@@ -65,12 +67,12 @@ export default function AllPosts() {
           </div>
 
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
-          {[...Array(5)].map((_, i, post) => (
-           
-              <Postdiv key={i} title={"hello mom"} {...post} />
+          {posts && posts.map((_, i) => {
+            if (i >= 2 && i < 5) {
+              return <Postdiv key={i} title={posts[i].title} authorName={posts[i].author_name} blogDate={posts[i].blog_date} link={'/blog/' + posts[i].slug}  />
+            }
               
-            ))}
-
+            })}
 
             </div>
       <Link href="/blog/all">
