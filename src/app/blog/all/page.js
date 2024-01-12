@@ -121,14 +121,14 @@ staggersAnimation.play();
    {posts && posts.map((_, i) => (
            <Link href={`/blog/${posts[i].slug}`}>
            <div key={i} className='  w-[40vw] h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
-           <h3 className=' text-white font-semibold text-2xl'>{posts[i].title}</h3>
+           <h3 className='text-balance text-white font-semibold text-2xl'>{posts[i].title}</h3>
            <div className='flex items-center '>
            <FaRegCalendarAlt color='#93a2b7' size="15px"/>
            <p className=' text-[#93a2b7] text-sm mx-2'>{posts[i].blog_date} |</p>
            <IoMdTime color='#93a2b7' size="18px" />
            <p className=' text-[#93a2b7] text-sm p-1 '>{posts[i].reading_time} </p>
            </div>
-           <p className='  text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground m-0 p-0'>{posts[i].description}</p>
+           <p className=' text-balance text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground m-0 p-0'>{posts[i].description}</p>
        </div>
            </Link>
            
