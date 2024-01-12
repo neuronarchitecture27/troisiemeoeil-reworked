@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import getSlug from '../../utils/getSlug';
+import { useEffect, useState } from 'react'
+import supabase from '@/config/supabaseClient';
 import './index.css'
 import styles from './page.module.scss'
 import { AnimatePresence } from 'framer-motion';
@@ -12,7 +12,6 @@ import  { anime } from 'react-anime';
 
 export default function Index() {
     const [isLoading, setIsLoading] = useState(true);
-    const id =  getSlug();
 
     useEffect( () => {
       (
@@ -95,7 +94,19 @@ const staggersAnimation = anime.timeline({
 
 staggersAnimation.play();
     }, [])
-
+    const [posts, setposts] = useState(null)
+    useEffect(()=> {
+      const getData = async () => {
+        let { data: posts, error } = await supabase
+        .from('blogs')
+        .select()
+        .order('created_at', { ascending: false })
+        setposts(posts);
+      console.log(posts);
+  
+      }
+      getData()
+    },[])
   return (
     <main className={styles.main }>
     <AnimatePresence mode='wait'>
@@ -106,18 +117,18 @@ staggersAnimation.play();
     <div className="stagger-visualizer"></div>
 
     </div>
-   <div className=' w-full h-auto flex flex-col items-center py-3 '>
-   {[...Array(10)].map((_, i, post) => (
-           <Link href="/blog/posttitle">
-           <div key={i} className=' w-full h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
-           <h3 className=' text-white font-semibold text-2xl'>Choosing Providers</h3>
+   <div className=' w-full h-auto flex-wrap flex flex-col items-center py-3 '>
+   {posts && posts.map((_, i) => (
+           <Link href={`/blog/${posts[i].slug}`}>
+           <div key={i} className='  w-[40vw] h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
+           <h3 className=' text-white font-semibold text-2xl'>{posts[i].title}</h3>
            <div className='flex items-center '>
            <FaRegCalendarAlt color='#93a2b7' size="15px"/>
-           <p className=' text-[#93a2b7] text-sm mx-2'>22-05-2024 |</p>
+           <p className=' text-[#93a2b7] text-sm mx-2'>{posts[i].blog_date} |</p>
            <IoMdTime color='#93a2b7' size="18px" />
-           <p className=' text-[#93a2b7] text-sm p-1 '>2 Minutes </p>
+           <p className=' text-[#93a2b7] text-sm p-1 '>{posts[i].reading_time} </p>
            </div>
-           <p className=' text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground m-0 p-0'>How to choose and set up Analytics, newsletter, and other providers for your blog.</p>
+           <p className='  text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground m-0 p-0'>{posts[i].description}</p>
        </div>
            </Link>
            

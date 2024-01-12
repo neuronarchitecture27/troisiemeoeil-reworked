@@ -25,7 +25,7 @@ export default function AllPosts() {
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
  
    <div className=" w-4/5 grid lg:grid-cols-3 grid-cols-1 gap-6 px-3 mt-10">
-            {posts && posts.slice(0, 2).map((_, i) => (
+            {posts && posts.slice(0, 5).map((_, i) => (
            
                   <div
                     key={i}
@@ -68,7 +68,7 @@ export default function AllPosts() {
 
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
           {posts && posts.map((_, i) => {
-            if (i >= 2 && i < 5) {
+            if (i >= 5 && i < 9) {
               return <Postdiv key={i} title={posts[i].title} authorName={posts[i].author_name} blogDate={posts[i].blog_date} link={'/blog/' + posts[i].slug}  />
             }
               

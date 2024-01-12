@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { GoHome } from "react-icons/go";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import './index.css'
+import supabase from '@/config/supabaseClient';
+
 import getSlug from '../../utils/getSlug';
 import styles from './page.module.scss'
 import { AnimatePresence } from 'framer-motion';
@@ -34,6 +36,26 @@ export default function SinglePost() {
       setPath(progress);
     }, [])
 
+    const [post, setpost] = useState(null)
+    useEffect(() => {
+      const  getSlugDetails = async () => {
+        const { data: postDetails, error: err } = await supabase
+        .from('blogs')
+        .select()
+        .match({
+          slug: id.slug
+        })
+        return postDetails
+      }
+      getSlugDetails().then((result)=> {
+        setpost(result)
+        console.log(result);
+      })
+     
+    }, []);
+    if (post) {
+      console.log(post);
+    }
     const setPath = (progress) => {
         const width = window.innerWidth * 0.48;
         path.current.setAttributeNS(null, "d", `M0 250 Q${width * x} ${250 + progress}, ${width} 250`)
@@ -85,6 +107,7 @@ export default function SinglePost() {
     </AnimatePresence>
     <div className='w-full h-[10vh]'></div>
    <div className='w-full h-[100vh] flex flex-col items-center py-3 '>
+ 
     <div className='w-full p-4 md:w-1/2'>
 
     <div className='flex p-2 gap-1 mb-8'>
@@ -101,16 +124,21 @@ export default function SinglePost() {
     <MdKeyboardArrowRight color='#93a2b7' size="20px"/>
     <p className='text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground '>{id.slug}</p>
     </div>
+    {post && post.map((_, i) => (
+      <>
     <div className='w-full relative h-[250px] mb-20'> 
     <Image
-    src="/images/c2montreal.png"
-    alt="Post Thumbnail"
+    src={post[i].blog_img_url}
+    alt={post[i].title}
     fill="true"
     style={{objectFit: "cover"}}
     />
     </div>
-    <h1 className="mb-2 text-5xl md:text-6xl text-white">Glassmorphism with Tailwind CSS Under 60 seconds</h1>
-    <h3 className=' mb-2 md:text-lg text-[#f0f8ff]'>Quick guide on how to make glass morph components with Tailwind (updated for latest Tailwind version)</h3>
+    <h1 className="mb-2 text-5xl md:text-6xl text-white">{post[i].title}</h1>
+    <h3 className=' mb-2 md:text-lg text-[#f0f8ff]'>{post[i].description}</h3>
+    </>
+))}
+
     <div className="line">
               <div 
                onMouseEnter={() => {manageMouseEnter()}} 
