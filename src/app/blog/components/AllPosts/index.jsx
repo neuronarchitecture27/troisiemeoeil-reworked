@@ -29,8 +29,8 @@ export default function AllPosts() {
            
                   <div
                     key={i}
-                    className={`rounded-xl border border-neutral-800 bg-neutral-900  relative  overflow-hidden
-                    ${i === 0 && "md:row-span-2 row-start-1 "}
+                    className={`rounded-xl border border-neutral-800 bg-neutral-900  relative  overflow-hidden 
+                    ${i === 0 && "md:row-span-2 lg:h-auto h-60 row-start-1 "}
                     ${i === 1 && "lg:h-[280px] h-64 "}
                     ${i === 2 && "lg:h-80 h-64 "}
                     ${i === 3 && "lg:h-[330px] h-64 lg:-mt-9 "}
@@ -44,7 +44,7 @@ export default function AllPosts() {
                         alt=""
                       />
 
-                      <p className="text-neutral-50 bottom-14 font-InterBold text-xl ml-2  absolute z-20 ">
+                      <p className="text-neutral-50 bottom-14 font-InterBold text-sm lg:text-xl ml-2  absolute z-20 ">
                         {posts[i].title}
                       </p>
 

@@ -120,7 +120,7 @@ staggersAnimation.play();
    <div className=' w-full h-auto flex-wrap flex flex-col items-center py-3 '>
    {posts && posts.map((_, i) => (
            <Link href={`/blog/${posts[i].slug}`}>
-           <div key={i} className='  w-[40vw] h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
+           <div key={i} className=' w-[80vw] lg:w-[40vw] h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
            <h3 className='text-balance text-white font-semibold text-2xl'>{posts[i].title}</h3>
            <div className='flex items-center '>
            <FaRegCalendarAlt color='#93a2b7' size="15px"/>

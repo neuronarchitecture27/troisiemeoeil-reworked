@@ -4,15 +4,17 @@ import { GoHome } from "react-icons/go";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import './index.css'
 import supabase from '@/config/supabaseClient';
-
+import MdxLayout from '../template/template'
 import getSlug from '../../utils/getSlug';
-import styles from './page.module.scss'
 import { AnimatePresence } from 'framer-motion';
 import Transition from "../../../components/Transition"
 import Link from 'next/link';
 import Image from 'next/image';
+
+
+
 export default function SinglePost() {
-    
+    const [history, setHistory] = useState('')
     const [isLoading, setIsLoading] = useState(true);
     const id =  getSlug();
     const path = useRef(null);
@@ -49,6 +51,7 @@ export default function SinglePost() {
       }
       getSlugDetails().then((result)=> {
         setpost(result)
+        setHistory(result[0].title)
         console.log(result);
       })
      
@@ -101,12 +104,12 @@ export default function SinglePost() {
       }
     
   return (
-    <main className={styles.main }>
+    <main className="w-full h-auto">
     <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
     </AnimatePresence>
-    <div className='w-full h-[10vh]'></div>
-   <div className='w-full h-[100vh] flex flex-col items-center py-3 '>
+    <div className='w-full h-[20vh] lg:h-[20vh]'></div>
+   <div className='w-full  flex flex-col items-center py-3 '>
  
     <div className='w-full p-4 md:w-1/2'>
 
@@ -122,11 +125,11 @@ export default function SinglePost() {
         </div>
     </Link>
     <MdKeyboardArrowRight color='#93a2b7' size="20px"/>
-    <p className='text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground '>{id.slug}</p>
+    <p className='text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground '>{history}</p>
     </div>
     {post && post.map((_, i) => (
-      <>
-    <div className='w-full relative h-[250px] mb-20'> 
+      <div key={i}>
+    <div  className='w-full relative h-[250px] mb-20'> 
     <Image
     src={post[i].blog_img_url}
     alt={post[i].title}
@@ -136,7 +139,7 @@ export default function SinglePost() {
     </div>
     <h1 className="mb-2 text-5xl md:text-6xl text-white">{post[i].title}</h1>
     <h3 className=' mb-2 md:text-lg text-[#f0f8ff]'>{post[i].description}</h3>
-    </>
+    </div>
 ))}
 
     <div className="line">
@@ -150,7 +153,9 @@ export default function SinglePost() {
               </svg>
     </div>
 
+ 
     <div className='text-[#f0f8ff] font-light text-xl'>
+<MdxLayout />
     Glassmorphism is an ongoing trend right now in User interfaces. The new macOS, Big Sur brings a lot of it into the OS, and Microsoft has it for years with Aero UI, then later FluentUI.
 <br />
 <br />
