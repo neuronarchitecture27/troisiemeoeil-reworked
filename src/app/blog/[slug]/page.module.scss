@@ -1,5 +1,6 @@
 @import '/breakpoints';
 .main {
+    height: 100vh;
     @include sm {
     box-sizing: content-box; 
         width: 100%;
