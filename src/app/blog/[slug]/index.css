@@ -40,3 +40,18 @@
     display: none;
   }
 } */
+
+
+#reactMarkDown h2, h1 {
+color: brown;
+font-size: 3rem;
+}
+
+#reactMarkDown p {
+  color: #f0f8ff;
+  font-size: 1.2rem;
+  }
+
+  #reactMarkDown img {
+   margin: 2rem 0 2rem 0;
+    }

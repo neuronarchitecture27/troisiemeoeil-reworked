@@ -102,7 +102,7 @@ export default function SinglePost() {
 ))}
 
 
-    <div className='text-[#f0f8ff] h-auto font-light text-xl'>
+    <div id='reactMarkDown' className='text-[#f0f8ff] h-auto font-light '>
     {post && post.map((_, i) => (
  
     <MarkdownView
