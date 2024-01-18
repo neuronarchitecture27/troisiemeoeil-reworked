@@ -153,7 +153,7 @@ function handleIframeLoad() {
             
                 <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline">Get in touch 👋</Button>
+        <Button variant="outline" className="text-black">Get in touch 👋</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto h-auto w-full flex flex-col items-center  ">

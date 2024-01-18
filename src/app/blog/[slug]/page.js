@@ -6,11 +6,11 @@ import './index.css'
 import supabase from '@/config/supabaseClient';
 import MarkdownView from 'react-showdown';
 import getSlug from '../../utils/getSlug';
-import styles from './page.module.scss'
 import { AnimatePresence } from 'framer-motion';
 import Transition from "../../../components/Transition"
 import Link from 'next/link';
 import Image from 'next/image';
+
 export default function SinglePost() {
 
   // const {slug} = params
@@ -62,13 +62,12 @@ export default function SinglePost() {
     }
     
   return (
-    <div className='h-auto w-fit'>
+    <main className=' h-auto w-fit'>
     <AnimatePresence mode='wait'>
       {isLoading && <Transition />}
     </AnimatePresence>
     <div className='w-full h-[10vh]'></div>
    <div className='w-full flex flex-col items-center py-3 '>
- 
     <div className='w-full p-4 md:w-1/2'>
 
     <div className='flex p-2 gap-1 mb-8'>
@@ -113,9 +112,14 @@ export default function SinglePost() {
     </div>
     </div>
 
- 
+    <div className='w-full flex flex-col items-center'>
+      <h1>Liked it? Check these out:</h1>
+      <div >
+    
+      </div>
+    </div>
    </div>
-  </div>
+  </main>
   )
 }
 
