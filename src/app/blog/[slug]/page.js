@@ -58,7 +58,7 @@ export default function SinglePost() {
      
     }, []);
     if (post) {
-      console.log(post[0].content);
+      console.log(post);
     }
     
   return (
