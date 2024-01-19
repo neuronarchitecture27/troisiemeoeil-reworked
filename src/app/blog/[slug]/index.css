@@ -65,6 +65,16 @@ font-size: 3rem;
     border-radius: 15px;
 }
 
+
+
+#reactMarkDown ol li::before {
+  content: " • ";
+}
+
+#reactMarkDown ul li::before {
+  content: " - ";
+}
+
 @media only screen and (max-width: 600px) {
   #reactMarkDown h2, h1 {
     color: beige;
