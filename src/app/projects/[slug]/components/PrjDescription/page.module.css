@@ -125,4 +125,9 @@
   .tagsContainer p:nth-of-type(1) {
     padding: 0% 3% 0% 3%;
   }
+
+  .line{
+display: none;
+  }
+  
 }
