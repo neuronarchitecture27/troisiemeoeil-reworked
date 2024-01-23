@@ -9,32 +9,7 @@ import Rounded from '../../common/RoundedButton';
 import Link from 'next/link';
 import supabase from '@/config/supabaseClient';
 
-const projectos = [
-  {
-    title: "C2 Montreal",
-    specialty: "Manufacturing ",
-    src: "c2montreal.png",
-    color: "#000000"
-  },
-  {
-    title: "Office Studio",
-    specialty: "Healthcare ",
-    src: "officestudio.png",
-    color: "#8C8C8C"
-  },
-  {
-    title: "Locomotive",
-    specialty: "Fragrances ",
-    src: "locomotive.png",
-    color: "#EFE8D3"
-  },
-  {
-    title: "Silencio",
-    specialty: "E-commerce ",
-    src: "silencio.png",
-    color: "#706D63"
-  }
-]
+
 
 
 const scaleAnimation = {
@@ -99,7 +74,7 @@ export default function Home() {
     setModal({active, index})
   }
 
-  function getColor(){ 
+  function getBgColor(){ 
     return "hsl(" + 360 * Math.random() + ',' +
                (25 + 70 * Math.random()) + '%,' + 
                (85 + 10 * Math.random()) + '%)'
@@ -111,7 +86,9 @@ export default function Home() {
     <div className={styles.body}>
       { listofprojects &&
         listofprojects.map( (project, index) => {
-          return <Project index={index} title={project.project_title} specialty={project.project_date} manageModal={manageModal} key={index}/>
+          return  <Link className='w-full' href={`/projects/${project.slug}`}>
+          <Project index={index} title={project.project_title} specialty={project.project_date} manageModal={manageModal} key={index}/>
+          </Link>
         })
       }
     </div>
@@ -125,8 +102,9 @@ export default function Home() {
             <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
             { listofprojects &&
               listofprojects.map( (project, index) => {
-                  const { src, color } = projectos
-                return <div className={styles.modal} style={{backgroundColor: getColor()}} key={`modal_${index}`}>
+                return <Link href={`/projects/${project.slug}`}>
+                <div className={styles.modal} style={{backgroundColor: getBgColor()}} key={`modal_${index}`}>
+
                     <Image 
                     src={project.img_url}
                     width={300}
@@ -134,6 +112,7 @@ export default function Home() {
                     alt="image"
                     />
                 </div>
+            </Link>
                 })
             }
             </div>
