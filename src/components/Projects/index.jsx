@@ -7,8 +7,9 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton';
 import Link from 'next/link';
+import supabase from '@/config/supabaseClient';
 
-const projects = [
+const projectos = [
   {
     title: "C2 Montreal",
     specialty: "Manufacturing ",
@@ -35,6 +36,7 @@ const projects = [
   }
 ]
 
+
 const scaleAnimation = {
     initial: {scale: 0, x:"-50%", y:"-50%"},
     enter: {scale: 1, x:"-50%", y:"-50%", transition: {duration: 0.4, ease: [0.76, 0, 0.24, 1]}},
@@ -42,6 +44,22 @@ const scaleAnimation = {
 }
 
 export default function Home() {
+  const [listofprojects, setListofprojects] = useState(null)
+
+ 
+  useEffect(()=> {
+    const getData = async () => {
+      let { data: projects, error } = await supabase
+      .from('projects')
+      .select()
+      setListofprojects(projects);
+    }
+    getData()
+    console.log(getData());
+  },[])
+  if (listofprojects) {
+    console.log(listofprojects);
+  }
 
   const [modal, setModal] = useState({active: false, index: 0})
   const { active, index } = modal;
@@ -81,12 +99,19 @@ export default function Home() {
     setModal({active, index})
   }
 
+  function getColor(){ 
+    return "hsl(" + 360 * Math.random() + ',' +
+               (25 + 70 * Math.random()) + '%,' + 
+               (85 + 10 * Math.random()) + '%)'
+  }
+  
+
   return (
   <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
     <div className={styles.body}>
-      {
-        projects.map( (project, index) => {
-          return <Project index={index} title={project.title} specialty={project.specialty} manageModal={manageModal} key={index}/>
+      { listofprojects &&
+        listofprojects.map( (project, index) => {
+          return <Project index={index} title={project.project_title} specialty={project.project_date} manageModal={manageModal} key={index}/>
         })
       }
     </div>
@@ -98,12 +123,12 @@ export default function Home() {
     <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
             <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
-            {
-                projects.map( (project, index) => {
-                const { src, color } = project
-                return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
+            { listofprojects &&
+              listofprojects.map( (project, index) => {
+                  const { src, color } = projectos
+                return <div className={styles.modal} style={{backgroundColor: getColor()}} key={`modal_${index}`}>
                     <Image 
-                    src={`/images/${src}`}
+                    src={project.img_url}
                     width={300}
                     height={0}
                     alt="image"

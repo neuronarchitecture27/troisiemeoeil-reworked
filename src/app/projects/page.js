@@ -2,7 +2,6 @@
 import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
-import Contact from '../../components/Home/Contact';
 import Transition from "../../components/Transition"
 import RevealText from "./components/RevealText"
 import ProjectImages from "./components/ProjectImages"
