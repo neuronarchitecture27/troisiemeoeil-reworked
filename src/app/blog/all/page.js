@@ -121,7 +121,7 @@ staggersAnimation.play();
    {posts && posts.map((_, i) => (
            <Link  key={i}  href={`/blog/${posts[i].slug}`}>
            <div className=' w-[80vw] lg:w-[40vw] h-auto rounded-xl cursor-pointer hover:bg-[#2b3240a3] transition ease-in-out delay-75 p-6'>
-           <h3 className='text-balance text-white font-semibold text-2xl'>{posts[i].title}</h3>
+           <h3 className='text-balance text-white font-semibold text-2xl capitalize'>{posts[i].title}</h3>
            <div className='flex items-center '>
            <FaRegCalendarAlt color='#93a2b7' size="15px"/>
            <p className=' text-[#93a2b7] text-sm mx-2'>{posts[i].blog_date} |</p>

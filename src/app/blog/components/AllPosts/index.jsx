@@ -4,6 +4,7 @@ import Postdiv from './RestPost/Postdiv'
 import supabase from '@/config/supabaseClient';
 import Rounded from '@/common/RoundedButton'
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function AllPosts() {
 
@@ -32,7 +33,8 @@ export default function AllPosts() {
         // Render posts if ready
         <>
           {posts && posts.slice(0, 5).map((_, i) => (
-           
+            <>
+           {/* <h1 className='text-white'>{posts[i].slug}</h1> */}
            <div
              key={i}
              className={`rounded-xl border border-neutral-800 bg-neutral-900  relative  overflow-hidden 
@@ -50,7 +52,7 @@ export default function AllPosts() {
                  alt=""
                />
 
-               <p className="text-neutral-50 bottom-14 font-InterBold text-sm lg:text-xl ml-2  absolute z-20 ">
+               <p className="text-neutral-50 bottom-14 font-InterBold text-sm lg:text-xl ml-2 capitalize  absolute z-20 ">
                  {posts[i].title}
                </p>
 
@@ -68,6 +70,8 @@ export default function AllPosts() {
              </Link>
              <div className="bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
            </div>
+           </>
+
          )
            )}
         </>
