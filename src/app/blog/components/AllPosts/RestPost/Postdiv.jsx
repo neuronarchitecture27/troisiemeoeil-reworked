@@ -10,7 +10,7 @@ function Postdiv({title, authorName, blogDate, link}) {
         href={link}
         className="hover:bg-neutral-950 p-2 hover:rounded-2xl"
       >
-        <h1 className="font-InterBold text-2xl  text-neutral-300 my-2">
+        <h1 className="font-InterBold text-2xl capitalize  text-neutral-300 my-2">
           {title}
         </h1>
         <div className="text-neutral-500 flex  w-full items-center ">

@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Troisieme Oeil Digital - Crafting New Experiences.',
   description: 'Troisieme Oeil Digital is a software agency working with top leaders in the industry to deliver high quality solutions and guarantee the best service. ',
+  
 }
 
 export default function RootLayout({ children }) {
