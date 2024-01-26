@@ -5,7 +5,11 @@ import supabase from '@/config/supabaseClient';
 import Rounded from '@/common/RoundedButton'
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
+export const metadata = {
+  title: {
+    absolute: "Blog"
+  }
+}
 export default function AllPosts() {
 
   const [posts, setposts] = useState(null)

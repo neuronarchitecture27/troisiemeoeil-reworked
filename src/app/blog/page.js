@@ -1,39 +1,15 @@
-'use client'
-
-import { useEffect, useState } from 'react';
-import styles from './page.module.scss'
-import { AnimatePresence } from 'framer-motion';
-import Transition from "../../components/Transition"
-import AllPosts from './components/AllPosts';
-
-export default function Index() {
+import Layout from './components/BlogLayout'
 
 
-    
-  const [isLoading, setIsLoading] = useState(true);
+export const metadata = {
+  title: "Blog"
+}
 
-  useEffect( () => {
-    (
-      async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
 
-          setTimeout( () => {
-            setIsLoading(false);
-            document.body.style.cursor = 'default'
-            window.scrollTo(0,0);
-          }, 20)
-      }
-    )()
-  }, [])
+export default function Index() {    
   return (
-    <main className={styles.main }>
-    <AnimatePresence mode='wait'>
-      {isLoading && <Transition />}
-    </AnimatePresence>
-    <div className={styles.divider}></div>
-    
-    <AllPosts />
-  </main>
+ <div>
+  <Layout />
+ </div>
   )
 }

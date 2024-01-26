@@ -11,9 +11,15 @@ export const Contact = lazy(()=> import('../components/Home/Contact'));
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Troisieme Oeil Digital - Crafting New Experiences.',
+  title: {
+    default: "Troisieme Oeil Digital - Crafting New Experiences.",
+    template: '%s - Troisieme Oeil Digital'
+  },
   description: 'Troisieme Oeil Digital is a software agency working with top leaders in the industry to deliver high quality solutions and guarantee the best service. ',
-  
+  twitter: {
+    card: "summary_large_image"
+  }
+
 }
 
 export default function RootLayout({ children }) {
