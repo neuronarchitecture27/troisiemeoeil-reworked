@@ -1,10 +1,8 @@
 .containerWrapp {
-    position: absolute;
-    width: 100%;
+    /* position: absolute; */
+    width: 99%;
     box-sizing: border-box;
-    height: 100%;
     top: 10%;
-    padding-right: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -13,16 +11,17 @@
 .mainheadline {
     padding-top: 5%;
     display: flex;
-    align-items: start;
+    flex-direction: column;
+    align-items: end;
     justify-content: end;
+    width: 100vw;
 }
 
 .descheadline {
     display: flex;
     align-items: start;
     justify-content: end;
-    gap: 15px;
-    width: 50%;
+    width: 55%;
     margin-top: 2em;
 }
 
@@ -31,9 +30,6 @@
     border: 0.5px solid rgba(59, 59, 59, 0.589);
 }
 
-.letter {
-    opacity: 1;
-}
 
 .headingWrapp {
     width: 55%;
@@ -86,5 +82,23 @@
     gap: 0.5em;
 }
 
+@media (max-width: 500px) {
+    .arrow {
+        display: none;
+    }
+    .headingWrapp{
+       width: 90vw; 
+       font-size: 9vw;
+    }
 
-
+    .descheadline {
+        width: 90vw;
+        margin-top: 0;
+    }
+    .descText{
+        font-size: 3.8vw;
+    }
+    .descText2{
+        font-size: 5.1vw;
+    }
+}

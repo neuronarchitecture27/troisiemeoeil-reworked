@@ -36,7 +36,7 @@ export default function Work() {
     {/* <div className='mobile'> */}
     <Landing />
     {/* </div> */}
-    <Description />
+    {/* <Description /> */}
    <div className='md:pt-[15em]'>
    <IntroProjects firstsentence="We turn empty space " secondsentence='into complexe shapes.' />
    </div>

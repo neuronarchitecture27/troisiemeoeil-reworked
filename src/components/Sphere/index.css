@@ -34,6 +34,7 @@
       width: 76em;
       position: absolute;
       right: -87%;
+      display: none;
       
     }
     .sphere-animation {

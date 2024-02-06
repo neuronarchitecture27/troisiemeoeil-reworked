@@ -5,6 +5,7 @@ import './index.css'
 import { useEffect, useRef } from "react";
 import styles from './page.module.css'
 import gsap from "gsap";
+import Description from '../Description';
 
 export default function Home() {
   const path = useRef(null);
@@ -13,8 +14,10 @@ export default function Home() {
   let time = Math.PI / 2;
   let reqId = null;
   const arrowRef = useRef(null)
+  const mainheadlineRef = useRef(null)
   useEffect(() => {
-    const arrowEl = arrowRef.current
+    const mainheadlineEl = mainheadlineRef.current
+
     let headingWrapp = document.querySelector('.ml12')
     headingWrapp.innerHTML = headingWrapp.textContent.replace(
       /\S/g,
@@ -31,7 +34,7 @@ export default function Home() {
         },
         ease: "power2.out"
     })
-    gsap.from(arrowEl, {duration: 1, opacity: 0, delay: 1,});
+    gsap.from(mainheadlineEl, {duration: 1, opacity: 0, delay: 1,});
 
 
     setPath(progress);
@@ -84,16 +87,16 @@ export default function Home() {
   }
 
   return (
-    <main >
+    <section >
 
-      <Sphere />
+     <div className=" hidden">
+     <Sphere />
+     </div>
 
-
+      <div className=" h-[20dvh]"></div>
       <div className='containerWrapp' >
-       <div className="mainheadline">
-          <div ref={arrowRef} className="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="150px" height="150px" ><path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" style={{fill:"#ffffff"}}/></svg>
-          </div>
+       <div ref={mainheadlineRef} className="mainheadline">
+       
           <div className='headingWrapp'>
              <div className="ml12" id="sentences">
               
@@ -110,8 +113,7 @@ export default function Home() {
               </svg>
             </div>
           </div>
-       </div>
-       <div className="descheadline">
+          <div className="descheadline">
           <div className='descText'>
            From design <br /> to software
           </div>
@@ -119,9 +121,10 @@ export default function Home() {
           The combination of  passion for design, code & interaction set us up in a unique place in the industry.
           </div>
        </div>
-
+       </div>
+  
       </div>
     
-    </main>
+    </section>
   )
 }
