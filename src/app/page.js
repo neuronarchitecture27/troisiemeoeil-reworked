@@ -32,12 +32,10 @@ export default function Work() {
 
   return (
     <main className={styles.main}>
-    <AnimatePresence mode='wait'>
-    {isLoading && <Preloader />}
-    </AnimatePresence>
-    <div className='mobile'>
+
+    {/* <div className='mobile'> */}
     <Landing />
-    </div>
+    {/* </div> */}
     <Description />
    <div className='md:pt-[15em]'>
    <IntroProjects firstsentence="We turn empty space " secondsentence='into complexe shapes.' />
