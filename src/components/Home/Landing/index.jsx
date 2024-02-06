@@ -12,8 +12,9 @@ export default function Home() {
   let x = 0.5;
   let time = Math.PI / 2;
   let reqId = null;
-
+  const arrowRef = useRef(null)
   useEffect(() => {
+    const arrowEl = arrowRef.current
     let headingWrapp = document.querySelector('.ml12')
     headingWrapp.innerHTML = headingWrapp.textContent.replace(
       /\S/g,
@@ -22,14 +23,17 @@ export default function Home() {
     gsap.timeline().from("#letter", {
         opacity: 0,
         duration: 0.5,
-        delay: 3,
+        delay: 1,
         stagger: {
-          amount: 0.5,
+          amount: 0.75,
           grid:"auto",
           from: "random"
         },
         ease: "power2.out"
     })
+    gsap.from(arrowEl, {duration: 1, opacity: 0, delay: 1,});
+
+
     setPath(progress);
 
   }, [])
@@ -87,11 +91,13 @@ export default function Home() {
 
       <div className='containerWrapp' >
        <div className="mainheadline">
-          <div className="arrow">
+          <div ref={arrowRef} className="arrow">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="150px" height="150px" ><path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" style={{fill:"#ffffff"}}/></svg>
           </div>
           <div className='headingWrapp'>
-             <h1 className="ml12" id="sentences"> cutting edge technology.</h1>
+             <div className="ml12" id="sentences">
+              
+               cutting edge technology.</div>
               
               <div className={styles.line}>
               <div 
