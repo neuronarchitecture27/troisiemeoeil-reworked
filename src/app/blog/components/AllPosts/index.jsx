@@ -4,8 +4,9 @@ import Postdiv from './RestPost/Postdiv'
 import supabase from '@/config/supabaseClient';
 import Rounded from '@/common/RoundedButton'
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import moment from 'moment';
+
+
 export const metadata = {
   title: {
     absolute: "Blog"
@@ -13,34 +14,56 @@ export const metadata = {
 }
 
 export default function AllPosts() {
+const [Response, setResponse] = useState(null)
+  const [isReady, setIsReady] = useState(false);
+const [content, setContent] = useState(null)
+  const fetchBlogs = async () => {
+    const res = await fetch("/api/blog", {
+      method: "GET"
+    })
+    const response = await res.json()
+    setResponse({
+      data: response.data
+    })
+    setIsReady(true);
+
+     if (Response) {
+      console.log(Response.data);
+     }
+    
+  }
+
+  useEffect(()=> { 
+    fetchBlogs()
+    if (Response) {
+      setContent(Response.data)
+     }
+  }, [])
 
   const [posts, setposts] = useState(null)
-  const [isReady, setIsReady] = useState(false);
-  useEffect(()=> {
-      const getData = async () => {
-        let { data: posts, error } = await supabase
-        .from('blogs')
-        .select()
-        .order('created_at', { ascending: false })
-        setposts(posts);
-        setIsReady(true);
-        console.log(posts);
+  // useEffect(()=> {
+  //     const getData = async () => {
+  //       let { data: posts, error } = await supabase
+  //       .from('blogs')
+  //       .select()
+  //       .order('created_at', { ascending: false })
+  //       setposts(posts);
+  //       setIsReady(true);
+  //       console.log(posts);
         
-      }
-      getData()
-  },[])
+  //     }
+  //     getData()
+  // },[])
 
   return (
     <div className=" w-full flex flex-col items-center justify-center h-auto my-5 p-2">
  
    <div className=" w-4/5 grid lg:grid-cols-3 grid-cols-1 gap-6 px-3 mt-10"> 
 
-   {isReady ? (
+   {isReady? (
         // Render posts if ready
         <>
-          {posts && posts.slice(0, 5).map((_, i) => (
-            <>
-           {/* <h1 className='text-white'>{posts[i].slug}</h1> */}
+          {Response.data && Response.data.slice(0,5).map((data,i) => (
            <div
              key={i}
              className={`rounded-xl border border-neutral-800 bg-neutral-900  relative  overflow-hidden 
@@ -51,15 +74,15 @@ export default function AllPosts() {
              ${i === 4 && "h-72"}
              `}
            >
-             <Link href={`blog/${posts[i].slug}`}>
+             <Link href={`blog/${data.slug}`}>
                <img
                  className="h-full  w-full object-cover"
-                 src={posts[i].cover_url}
-                 alt=""
+                 src={data.cover_url}
+                 alt={data.title}
                />
 
                <p className="text-neutral-50 bottom-14 font-InterBold text-sm lg:text-xl ml-2 capitalize  absolute z-20 ">
-                 {posts[i].title}
+                 {data.title}
                </p>
 
                <div className="absolute bottom-3 z-20 flex justify-between items-center w-full px-2 font-InterMedium text-neutral-500 text-sm">
@@ -67,17 +90,18 @@ export default function AllPosts() {
                    <img
                      className="w-8 h-8 rounded-full object-cover"
                      src="https://onkeenjmkuvoigdvczqk.supabase.co/storage/v1/object/public/troisiemeoeil-bucket/troisiemeoeillogo.png"
-                     alt={posts[i].author}
+                     alt={data.author}
                    />
-                   <p className='text-white w-full'>{posts[i].author}</p>
+                   <p className='text-white w-full'>{data.author}</p>
                  </div>
-                 <p> {moment(posts[i].created_at).format('MMMM Do YYYY')}</p>
+                 <p> {moment(data.created_at).format('MMMM Do YYYY')}</p>
+
 
                </div>
              </Link>
              <div className="bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
            </div>
-           </>
+           
 
          )
            )}
@@ -102,9 +126,9 @@ export default function AllPosts() {
               <div className=" bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
             </div>
 )
-)}
+        )}
 
-<div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-[78vw]">
+      <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-[78vw]">
         <div className='bg-gradient-to-b from-neutral-800  to-neutral-700 rounded-md'>
               <Link
                 href='#'
@@ -161,19 +185,16 @@ export default function AllPosts() {
                 </div>
               </Link>
         </div>
-  </div>
+        </div>
 
       </>
       )}
-    
-    
-          
-          </div>
 
+          </div>
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
-          {posts && posts.map((_, i) => {
+          {Response && Response.data.map((data, i) => {
             if (i >= 5 && i < 9) {
-              return <Postdiv key={i} title={posts[i].title} authorName={posts[i].author} blogDate={moment(posts[i].created_at).format('MMMM Do YYYY')} link={'/blog/' + posts[i].slug}  />
+              return <Postdiv key={i} title={data.title} authorName={data.author} blogDate={moment(data.created_at).format('MMMM Do YYYY')} link={'/blog/' + data.id}  />
             }
               
             })}

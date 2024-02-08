@@ -18,7 +18,7 @@ function Postdiv({title, authorName, blogDate, link}) {
        <img
             className="w-7 h-7 rounded-full object-cover"
             src="./images/troisiemeoeillogo.png"
-            alt=""
+            alt="troisieme oeil logo"
           />
           <p className="text-neutral-500 text-sm font-InterRegular">
              {authorName} | {blogDate}
