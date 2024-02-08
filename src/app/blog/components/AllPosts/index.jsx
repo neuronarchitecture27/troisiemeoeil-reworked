@@ -74,7 +74,7 @@ const [content, setContent] = useState(null)
              ${i === 4 && "h-72"}
              `}
            >
-             <Link href={`blog/${data.slug}`}>
+             <Link href={`blog/${data.slug_url}`}>
                <img
                  className="h-full  w-full object-cover"
                  src={data.cover_url}
@@ -193,8 +193,8 @@ const [content, setContent] = useState(null)
           </div>
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
           {Response && Response.data.map((data, i) => {
-            if (i >= 5 && i < 9) {
-              return <Postdiv key={i} title={data.title} authorName={data.author} blogDate={moment(data.created_at).format('MMMM Do YYYY')} link={'/blog/' + data.id}  />
+            if (i >= 5 && i < 20) {
+              return <Postdiv key={i} title={data.title} authorName={data.author} blogDate={moment(data.created_at).format('MMMM Do YYYY')} link={'/blog/' + data.slug_url}  />
             }
               
             })}
