@@ -12,7 +12,7 @@ export async function GET(request) {
     response = await supabase.from("projects").select().eq("id", id).single()
     }
     else {
-        response = await supabase.from("projects").select().limit(20)
+        response = await supabase.from("projects").select().limit(20).order('id', { ascending: false })
     }
     // const data = await request.json();
     

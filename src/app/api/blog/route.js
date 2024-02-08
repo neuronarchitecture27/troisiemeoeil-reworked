@@ -15,7 +15,7 @@ export async function GET(request) {
     .single()
     }
     else {
-        response = await supabase.from("blogs").select().limit(20)
+        response = await supabase.from("blogs").select().limit(20).order('id', { ascending: false })
 
     }
     // const data = await request.json();
