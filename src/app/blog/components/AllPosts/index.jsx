@@ -5,11 +5,13 @@ import supabase from '@/config/supabaseClient';
 import Rounded from '@/common/RoundedButton'
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import moment from 'moment';
 export const metadata = {
   title: {
     absolute: "Blog"
   }
 }
+
 export default function AllPosts() {
 
   const [posts, setposts] = useState(null)
@@ -52,7 +54,7 @@ export default function AllPosts() {
              <Link href={`blog/${posts[i].slug}`}>
                <img
                  className="h-full  w-full object-cover"
-                 src={posts[i].blog_img_url}
+                 src={posts[i].cover_url}
                  alt=""
                />
 
@@ -63,13 +65,14 @@ export default function AllPosts() {
                <div className="absolute bottom-3 z-20 flex justify-between items-center w-full px-2 font-InterMedium text-neutral-500 text-sm">
                  <div className="flex items-center gap-x-2">
                    <img
-                     className="w-6 h-6 rounded-full object-cover"
-                     src={posts[i].author_img_url}
-                     alt={posts[i].author_name}
+                     className="w-8 h-8 rounded-full object-cover"
+                     src="https://onkeenjmkuvoigdvczqk.supabase.co/storage/v1/object/public/troisiemeoeil-bucket/troisiemeoeillogo.png"
+                     alt={posts[i].author}
                    />
-                   <p>  {posts[i].author_name}</p>
+                   <p className='text-white w-full'>{posts[i].author}</p>
                  </div>
-                 <p> {posts[i].blog_date}</p>
+                 <p> {moment(posts[i].created_at).format('MMMM Do YYYY')}</p>
+
                </div>
              </Link>
              <div className="bg-gradient-to-t  w-full absolute z-10  from-[#000000] via-black/80  to-transparent bottom-0   h-44 transition-all ease-in duration-200" />
@@ -170,15 +173,15 @@ export default function AllPosts() {
           <div className="mt-6 grid lg:grid-cols-2 lg:gap-11 p-3 gap-7  w-4/5">
           {posts && posts.map((_, i) => {
             if (i >= 5 && i < 9) {
-              return <Postdiv key={i} title={posts[i].title} authorName={posts[i].author_name} blogDate={posts[i].blog_date} link={'/blog/' + posts[i].slug}  />
+              return <Postdiv key={i} title={posts[i].title} authorName={posts[i].author} blogDate={moment(posts[i].created_at).format('MMMM Do YYYY')} link={'/blog/' + posts[i].slug}  />
             }
               
             })}
 
             </div>
       <Link href="/blog/all">
-      <Rounded>
-                <p > Read All Posts</p>
+                <Rounded>
+                <p > Load More</p>
                 </Rounded>
                 </Link>
     </div>
