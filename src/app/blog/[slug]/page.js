@@ -5,19 +5,10 @@ import { AnimatePresence } from 'framer-motion';
 import Transition from "../../../components/Transition"
 import Layout from './Layout';
 
-export default function SinglePost() {
+export default function SinglePost({params}) {
 
-  // const {slug} = params
-
-  // let post 
-  // const { data: article } = await supabase.from('blogs')
-  // .select()
-  // .match({
-  //   slug: slug
-  // })
-  //   console.log(article);
     const [isLoading, setIsLoading] = useState(true);
-  
+ 
     useEffect( () => {
       (
         async () => {
@@ -41,7 +32,7 @@ export default function SinglePost() {
     </AnimatePresence>
     <div className='w-full h-[10vh]'></div>
    <div className='w-full flex flex-col items-center py-3 '>
-  <Layout />
+  <Layout route={params.slug} />
 
     <div className='w-full flex flex-col items-center'>
       <h1>Liked it? Check these out:</h1>

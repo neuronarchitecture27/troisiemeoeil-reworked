@@ -1,81 +1,76 @@
+"use client";
 
+import React, { useEffect, useReducer } from "react";
+import Image from "next/image";
+import { Editor } from "novel";
+import { usePathname } from 'next/navigation';
 
-import Link from 'next/link';
-import Image from 'next/image';
-import MarkdownView from 'react-showdown';
-import { GoHome } from "react-icons/go";
-import { MdKeyboardArrowRight } from "react-icons/md";
-import supabase from '@/config/supabaseClient';
-import getSlug from '../../utils/getSlug';
+function Blog({route}) {
 
+  useEffect(()=> {
+  console.log(route);
 
-export default function Layout() {
-    
-    const id =  getSlug();
+  })
+  const [response, setResponse] = useReducer(
+    (prev, next) => {
+      return { ...prev, ...next };
+    },
+    {
+      data: [],
+      loading: true,
+      searchTerm: "",
+      page: 0,
+    }
+  );
 
-    let post = null
+  const fetchProjects = async () => {
+    setResponse({ loading: true });
+   
+    const res = await fetch(`/api/blog?id=${route}`, {
+      method: "GET",
+    });
+    const response = await res.json();
 
-      const  getSlugDetails = async () => {
-        const { data: postDetails, error: err } = await supabase
-        .from('blogs')
-        .select()
-        .match({
-          slug: id.slug
-        })
-        
-        return postDetails
-      }
-      getSlugDetails().then((result)=> {
-       post = result
-       console.log(post);
-      })
-     
- 
-    
-    
+    setResponse({
+      data: response.data,
+      loading: false,
+    });
+  };
 
+  useEffect(() => {
+    fetchProjects();
+  }, []);
   return (
-    <div className='w-full p-4 md:w-1/2'>
-
-    <div className='flex p-2 gap-1 mb-8'>
-        <Link href="/">
-    <GoHome color='#93a2b7'  size="20px"/>
-        </Link>
-    <MdKeyboardArrowRight color='#93a2b7' size="20px"/>
-    <Link  href='/blog/all'>
-        <div className=' w-auto cursor-pointer'>
-
-    <div className='text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground'>Blog</div>
+    <section className="pt-4 pb-10 relative z-10">
+    {response.loading ? (
+      <div
+        className="animate-pulse flex space-x-4 mt-12"
+      >
+        <div className="flex-1 space-y-6 py-1">
+          <div className="h-28 w-full bg-slate-200 rounded"></div>
+          <div className="space-y-3">
+            <div className="h-2 bg-slate-200 rounded"></div>
+            <div className="h-2 bg-slate-200 rounded"></div>
+          </div>
         </div>
-    </Link>
-    <MdKeyboardArrowRight color='#93a2b7' size="20px"/>
-    <p className='text-[#93a2b7] line-clamp-2 text-sm leading-snug text-muted-foreground '>{id.slug}</p>
-    </div>
-  
+      </div>
+    ) : (
       <>
-    <div className='w-full relative h-[250px] mb-20'> 
-    <Image
-    src={post[0].blog_img_url}
-    alt={post[0].title}
-    fill="true"
-    style={{objectFit: "cover"}}
-    />
-    </div>
-    <h1 className="mb-2 text-5xl md:text-6xl text-white">{post[0].title}</h1>
-    <h3 className=' mb-2 md:text-lg text-[#f0f8ff]'>{post[0].description}</h3>
- 
-    </>
-
-
-    <div id='reactMarkDown' className='text-[#f0f8ff] h-auto font-light '>
-    {post && post.map((_, i) => (
- 
-    <MarkdownView
-      markdown={post[i].content}
-    />
-))}
-
-    </div>
-    </div>
-  )
+        <ul className="flex mb-2 gap-3">
+          {response.data.tags.map((tag, index) => (
+            <li
+              className="text-xs text-slate-400 border border-slate-400 px-2 py-1 rounded "
+              key={index.toString()}
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+   
+      </>
+    )}
+  </section>
+  );
 }
+
+export default Blog;
