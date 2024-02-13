@@ -5,6 +5,11 @@ import Document from '@tiptap/extension-document'
 import Heading from '@tiptap/extension-heading'
 import Paragraph from '@tiptap/extension-paragraph'
 import CodeBlock from '@tiptap/extension-code-block'
+import Code from '@tiptap/extension-code'
+import Link from '@tiptap/extension-link'
+import BulletList from '@tiptap/extension-bullet-list'
+
+
 import Blockquote from '@tiptap/extension-blockquote'
 import Image from '@tiptap/extension-image'
 import TaskItem from '@tiptap/extension-task-item'
@@ -37,12 +42,17 @@ export default ({content}) => {
           TaskItem,
           TaskList,
           ListItem,
-          OrderedList
+          OrderedList,
+          Code,
+          Link,
+          BulletList
           // other extensions …
         ])
       }, [content])
   return (
     <div  className={styles.container}  >
+        <div className=" w-full h-[4rem]"></div> 
+
 <div className='w-[80%]' dangerouslySetInnerHTML={{ __html: output }} />
       
     </div>

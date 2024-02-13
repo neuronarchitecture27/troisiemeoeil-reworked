@@ -55,8 +55,10 @@ function Blog({route}) {
         </div>
       </div>
     ) : (
-      <div className="w-[80%]">
-        <h1 className="text-white text-[3rem] my-5">{response.data.title}</h1>
+      <div className="w-full flex flex-col items-center justify-center">
+        <div className=" w-full h-[10rem]"></div> 
+     <div className="w-[80%]">
+     <h1 className="text-white text-[2.7rem] my-5">{response.data.title}</h1>
         <ul className="flex mb-2 gap-3">
           {response.data.tags.map((tag, index) => (
             <li
@@ -79,6 +81,7 @@ function Blog({route}) {
 
              <Content content={response.data.content} />
             </div>
+     </div>
       </div>
     )}
   </section>
