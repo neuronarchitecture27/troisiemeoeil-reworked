@@ -4,7 +4,7 @@ const nextConfig = {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
  
     images: {
-        domains: ['localhost', "rfkdwkpnnalilegqqggx.supabase.co"],
+        domains: ['localhost', "onkeenjmkuvoigdvczqk.supabase.co"],
       },
       experimental: {
         serverComponentsExternalPackages: [

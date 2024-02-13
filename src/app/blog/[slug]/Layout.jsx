@@ -3,13 +3,12 @@
 import React, { useEffect, useReducer } from "react";
 import Image from "next/image";
 import { Editor } from "novel";
-import { usePathname } from 'next/navigation';
+import Content from "./Content";
 
 function Blog({route}) {
-
   useEffect(()=> {
-  console.log(route);
 
+  console.log(route);
   })
   const [response, setResponse] = useReducer(
     (prev, next) => {
@@ -34,8 +33,9 @@ function Blog({route}) {
     setResponse({
       data: response.data,
       loading: false,
-    });
-  };
+    })
+
+  }
 
   useEffect(() => {
     fetchProjects();
@@ -56,6 +56,7 @@ function Blog({route}) {
       </div>
     ) : (
       <>
+        <h1 className="text-white text-3xl my-5">{response.data.title}</h1>
         <ul className="flex mb-2 gap-3">
           {response.data.tags.map((tag, index) => (
             <li
@@ -64,9 +65,20 @@ function Blog({route}) {
             >
               {tag}
             </li>
+            
           ))}
         </ul>
-   
+        <div>
+              <Image
+                src={response.data.cover_url}
+                width={500}
+                height={500}
+                className="w-full rounded-md my-5"
+                alt={response.data.title}
+              />
+
+             <Content content={response.data.content} />
+            </div>
       </>
     )}
   </section>

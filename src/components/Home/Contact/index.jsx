@@ -20,19 +20,19 @@ export default function Home() {
       <div className={styles.body}>
 
         <div className={styles.introLine}>
-          <p>Troisieme</p>
-          <p>Oeil</p>
+          <div>Troisieme</div>
+          <div>Oeil</div>
         </div>
 
         <div className={styles.introLine}>
-          <p>Design</p>
-          <p>&</p>
+          <div>Design</div>
+          <div>&</div>
         </div>
 
         <div className={styles.introLine}>
-          <p>Software</p>
+          <div>Software</div>
         
-          <p></p>
+          <div></div>
         </div>
 
         <TextDipserse setBackground={setBackground}>

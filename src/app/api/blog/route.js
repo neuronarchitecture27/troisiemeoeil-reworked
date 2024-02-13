@@ -2,9 +2,8 @@ import getSlug from "@/app/utils/getSlug";
 import { createClient } from "@/config/server";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-
 export async function GET(request) {
-    console.log("hello mom");
+ 
     let response;
     try {
         const cookieStore = cookies(request.headers);

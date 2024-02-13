@@ -831,7 +831,14 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-underline/-/extension-underline-2.2.2.tgz"
   integrity sha512-sCgbFbBU1fMWKCmDjZ6Am257kXM6ZjCV24AwbNusweieQnnD3aTXC7/iZg101sa2VshLsXozm8t2QDTyafnL+Q==
 
-"@tiptap/pm@^2.1.7":
+"@tiptap/html@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/@tiptap/html/-/html-2.2.2.tgz"
+  integrity sha512-O8DFNde1Hu+BLV0ApUZZ0ky85MhzHqCuCB3RH1z9c5GX40BeKKxkbO4Paqjmah67OWELGK0Htm2qHMVbx9hxTA==
+  dependencies:
+    zeed-dom "^0.10.9"
+
+"@tiptap/pm@^2.1.7", "@tiptap/pm@^2.2.2":
   version "2.2.2"
   resolved "https://registry.npmjs.org/@tiptap/pm/-/pm-2.2.2.tgz"
   integrity sha512-TcUxqevVcqLYOcbAGlmvZfOB5LL5zZmb6jxSHyevl41SRpGZLe9Jt0e1v98jS0o9GMS7nvcTK/scYQu9e0HqTA==
@@ -855,7 +862,7 @@
     prosemirror-transform "^1.8.0"
     prosemirror-view "^1.32.7"
 
-"@tiptap/react@^2.1.7":
+"@tiptap/react@^2.1.7", "@tiptap/react@^2.2.2":
   version "2.2.2"
   resolved "https://registry.npmjs.org/@tiptap/react/-/react-2.2.2.tgz"
   integrity sha512-9jRaY7Clrtb23itFyTGgLEo5SO0shR/kxlFN3G6Wyda6S6SduY9ERX93ffRdvzbJKcbEptcko0KqUZ/MD0eDnA==
@@ -863,7 +870,7 @@
     "@tiptap/extension-bubble-menu" "^2.2.2"
     "@tiptap/extension-floating-menu" "^2.2.2"
 
-"@tiptap/starter-kit@^2.1.7":
+"@tiptap/starter-kit@^2.1.7", "@tiptap/starter-kit@^2.2.2":
   version "2.2.2"
   resolved "https://registry.npmjs.org/@tiptap/starter-kit/-/starter-kit-2.2.2.tgz"
   integrity sha512-J8nbrVBggGJwO7CPEwdUqG6Q8btiQJjjnYWZEs+ImM9GMUfXJ8lyaGT0My3wDvTeq537N9BjTEcQ88pMtOqbOw==
@@ -1709,6 +1716,11 @@ crypto-js@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/crypto-js/-/crypto-js-4.2.0.tgz"
   integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
+
+css-what@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz"
+  integrity sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -5857,6 +5869,13 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zeed-dom@^0.10.9:
+  version "0.10.11"
+  resolved "https://registry.npmjs.org/zeed-dom/-/zeed-dom-0.10.11.tgz"
+  integrity sha512-7ukbu6aQKx34OQ7PfUIxOuAhk2MvyZY/t4/IJsVzy76zuMzfhE74+Dbyp8SHiUJPTPkF0FflP1KVrGJ7gk9IHw==
+  dependencies:
+    css-what "^6.1.0"
 
 zod@3.21.4:
   version "3.21.4"
