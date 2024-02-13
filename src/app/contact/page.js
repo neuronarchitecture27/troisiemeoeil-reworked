@@ -15,7 +15,8 @@ export default function Work() {
     (
       async () => {
           const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
+          const locomotiveScroll =
+           new LocomotiveScroll();
 
           setTimeout( () => {
             setIsLoading(false);

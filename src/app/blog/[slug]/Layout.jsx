@@ -55,12 +55,12 @@ function Blog({route}) {
         </div>
       </div>
     ) : (
-      <>
-        <h1 className="text-white text-3xl my-5">{response.data.title}</h1>
+      <div className="w-[80%]">
+        <h1 className="text-white text-[3rem] my-5">{response.data.title}</h1>
         <ul className="flex mb-2 gap-3">
           {response.data.tags.map((tag, index) => (
             <li
-              className="text-xs text-slate-400 border border-slate-400 px-2 py-1 rounded "
+              className="text-xs text-white text-slate-400 border border-slate-400 px-2 py-1 rounded "
               key={index.toString()}
             >
               {tag}
@@ -72,14 +72,14 @@ function Blog({route}) {
               <Image
                 src={response.data.cover_url}
                 width={500}
-                height={500}
-                className="w-full rounded-md my-5"
+                height={200}
+                className="w-full h-[20rem] object-cover rounded-md my-5"
                 alt={response.data.title}
               />
 
              <Content content={response.data.content} />
             </div>
-      </>
+      </div>
     )}
   </section>
   );

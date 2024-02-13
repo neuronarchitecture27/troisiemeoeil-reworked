@@ -6,6 +6,15 @@ import Heading from '@tiptap/extension-heading'
 import Paragraph from '@tiptap/extension-paragraph'
 import CodeBlock from '@tiptap/extension-code-block'
 import Blockquote from '@tiptap/extension-blockquote'
+import Image from '@tiptap/extension-image'
+import TaskItem from '@tiptap/extension-task-item'
+import TaskList from '@tiptap/extension-task-list'
+import ListItem from '@tiptap/extension-list-item'
+import OrderedList from '@tiptap/extension-ordered-list'
+
+
+
+
 import Text from '@tiptap/extension-text'
 // Option 1: Browser + server-side
 import { generateHTML } from '@tiptap/html'
@@ -23,13 +32,18 @@ export default ({content}) => {
           Text,
           Bold,
           CodeBlock,
-          Blockquote
+          Blockquote,
+          Image,
+          TaskItem,
+          TaskList,
+          ListItem,
+          OrderedList
           // other extensions …
         ])
       }, [content])
   return (
     <div  className={styles.container}  >
-<div dangerouslySetInnerHTML={{ __html: output }} />
+<div className='w-[80%]' dangerouslySetInnerHTML={{ __html: output }} />
       
     </div>
    
